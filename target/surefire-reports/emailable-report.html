@@ -1,0 +1,723 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>TestNG:  Unit Test</title>
+<style type="text/css">
+table caption,table.info_table,table.param,table.passed,table.failed {margin-bottom:10px;border:1px solid #000099;border-collapse:collapse;empty-cells:show;}
+table.info_table td,table.info_table th,table.param td,table.param th,table.passed td,table.passed th,table.failed td,table.failed th {
+border:1px solid #000099;padding:.25em .5em .25em .5em
+}
+table.param th {vertical-align:bottom}
+td.numi,th.numi,td.numi_attn {
+text-align:right
+}
+tr.total td {font-weight:bold}
+table caption {
+text-align:center;font-weight:bold;
+}
+table.passed tr.stripe td,table tr.passedodd td {background-color: #00AA00;}
+table.passed td,table tr.passedeven td {background-color: #33FF33;}
+table.passed tr.stripe td,table tr.skippedodd td {background-color: #cccccc;}
+table.passed td,table tr.skippedodd td {background-color: #dddddd;}
+table.failed tr.stripe td,table tr.failedodd td,table.param td.numi_attn {background-color: #FF3333;}
+table.failed td,table tr.failedeven td,table.param tr.stripe td.numi_attn {background-color: #DD0000;}
+tr.stripe td,tr.stripe th {background-color: #E6EBF9;}
+p.totop {font-size:85%;text-align:center;border-bottom:2px black solid}
+div.shootout {padding:2em;border:3px #4854A8 solid}
+</style>
+</head>
+<body>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th>Test</th><th class="numi">Methods<br/>Passed</th><th class="numi">Scenarios<br/>Passed</th><th class="numi"># skipped</th><th class="numi"># failed</th><th class="numi">Total<br/>Time</th><th class="numi">Included<br/>Groups</th><th class="numi">Excluded<br/>Groups</th></tr>
+<tr><td style="text-align:left;padding-right:2em">Command line test</td><td class="numi">66</td><td class="numi">66</td><td class="numi_attn">39</td><td class="numi_attn">2</td><td class="numi">3.6 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+</table>
+<a id="summary"></a>
+<table cellspacing=0 cellpadding=0 class="passed">
+<tr><th>Class</th><th>Method</th><th># of<br/>Scenarios</th><th>Time<br/>(Msecs)</th></tr>
+<tr><th colspan="4">Command line test &#8212; failed (configuration methods)</th></tr>
+<tr class="failedodd"><td rowspan="1">com.proofpoint.discovery.TestCassandraDynamicStore<td><a href="#m1"><b>setup</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="failedeven"><td rowspan="1">com.proofpoint.discovery.TestCassandraStaticStore<td><a href="#m2"><b>setup</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="failedodd"><td rowspan="1">com.proofpoint.discovery.TestDiscoveryServer<td><a href="#m3"><b>setup</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr><th colspan="4">Command line test &#8212; failed</th></tr>
+<tr class="failedodd"><td rowspan="1">com.proofpoint.discovery.TestStaticAndDynamicStores<td><a href="#m4"><b>testBothInitializeProperly</b>  </a></td><td class="numi">1</td><td class="numi">3</td></tr>
+<tr class="failedeven"><td rowspan="1">com.proofpoint.discovery.TestCassandraDynamicStoreInitialization<td><a href="#m5"><b>testUpdatesGCGraceSeconds</b>  </a></td><td class="numi">1</td><td class="numi">3</td></tr>
+<tr><th colspan="4">Command line test &#8212; skipped (configuration methods)</th></tr>
+<tr class="skippedodd"><td rowspan="1">com.proofpoint.discovery.TestCassandraDynamicStore<td><a href="#m6"><b>teardown</b>  </a></td><td class="numi">12</td><td class="numi">10</td></tr>
+<tr class="skippedeven"><td rowspan="1">com.proofpoint.discovery.TestStaticAndDynamicStores<td><a href="#m7"><b>teardownCassandra</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="skippedodd"><td rowspan="2">com.proofpoint.discovery.TestCassandraDynamicStore<td><a href="#m8"><b>setup</b>  </a></td><td class="numi">11</td><td class="numi">9</td></tr><tr class="skippedodd"><td><a href="#m9"><b>setup</b>  </a></td><td class="numi">11</td><td class="numi">9</td></tr>
+<tr class="skippedeven"><td rowspan="1">com.proofpoint.discovery.TestInMemoryDynamicStore<td><a href="#m10"><b>setup</b>  </a></td><td class="numi">11</td><td class="numi">6</td></tr>
+<tr class="skippedodd"><td rowspan="1">com.proofpoint.discovery.TestCassandraDynamicStore<td><a href="#m11"><b>setup</b>  </a></td><td class="numi">11</td><td class="numi">9</td></tr>
+<tr class="skippedeven"><td rowspan="1">com.proofpoint.discovery.TestCassandraStaticStore<td><a href="#m12"><b>setup</b>  </a></td><td class="numi">6</td><td class="numi">1</td></tr>
+<tr class="skippedodd"><td rowspan="1">com.proofpoint.discovery.TestCassandraDynamicStore<td><a href="#m13"><b>setup</b>  </a></td><td class="numi">11</td><td class="numi">9</td></tr>
+<tr class="skippedeven"><td rowspan="1">com.proofpoint.discovery.TestDiscoveryServer<td><a href="#m14"><b>teardown</b>  </a></td><td class="numi">2</td><td class="numi">1</td></tr>
+<tr class="skippedodd"><td rowspan="1">com.proofpoint.discovery.TestCassandraDynamicStore<td><a href="#m15"><b>teardown</b>  </a></td><td class="numi">12</td><td class="numi">10</td></tr>
+<tr class="skippedeven"><td rowspan="1">com.proofpoint.discovery.TestCassandraStaticStore<td><a href="#m16"><b>setup</b>  </a></td><td class="numi">6</td><td class="numi">1</td></tr>
+<tr class="skippedodd"><td rowspan="4">com.proofpoint.discovery.TestCassandraDynamicStore<td><a href="#m17"><b>teardown</b>  </a></td><td class="numi">12</td><td class="numi">10</td></tr><tr class="skippedodd"><td><a href="#m18"><b>setup</b>  </a></td><td class="numi">11</td><td class="numi">9</td></tr><tr class="skippedodd"><td><a href="#m19"><b>setup</b>  </a></td><td class="numi">11</td><td class="numi">9</td></tr><tr class="skippedodd"><td><a href="#m20"><b>teardown</b>  </a></td><td class="numi">12</td><td class="numi">10</td></tr>
+<tr class="skippedeven"><td rowspan="1">com.proofpoint.discovery.TestInMemoryStaticStore<td><a href="#m21"><b>setup</b>  </a></td><td class="numi">7</td><td class="numi">3</td></tr>
+<tr class="skippedodd"><td rowspan="1">com.proofpoint.discovery.TestDiscoveryServer<td><a href="#m22"><b>setup</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="skippedeven"><td rowspan="2">com.proofpoint.discovery.TestInMemoryDynamicStore<td><a href="#m23"><b>setup</b>  </a></td><td class="numi">11</td><td class="numi">6</td></tr><tr class="skippedeven"><td><a href="#m24"><b>setup</b>  </a></td><td class="numi">11</td><td class="numi">6</td></tr>
+<tr class="skippedodd"><td rowspan="1">com.proofpoint.discovery.TestDiscoveryServer<td><a href="#m25"><b>teardown</b>  </a></td><td class="numi">2</td><td class="numi">1</td></tr>
+<tr class="skippedeven"><td rowspan="1">com.proofpoint.discovery.TestCassandraDynamicStore<td><a href="#m26"><b>teardown</b>  </a></td><td class="numi">12</td><td class="numi">10</td></tr>
+<tr class="skippedodd"><td rowspan="2">com.proofpoint.discovery.TestInMemoryDynamicStore<td><a href="#m27"><b>setup</b>  </a></td><td class="numi">11</td><td class="numi">6</td></tr><tr class="skippedodd"><td><a href="#m28"><b>setup</b>  </a></td><td class="numi">11</td><td class="numi">6</td></tr>
+<tr class="skippedeven"><td rowspan="1">com.proofpoint.discovery.TestCassandraStaticStore<td><a href="#m29"><b>teardownCassandra</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="skippedodd"><td rowspan="1">com.proofpoint.discovery.TestCassandraDynamicStore<td><a href="#m30"><b>setup</b>  </a></td><td class="numi">11</td><td class="numi">9</td></tr>
+<tr class="skippedeven"><td rowspan="1">com.proofpoint.discovery.TestInMemoryStaticStore<td><a href="#m31"><b>setup</b>  </a></td><td class="numi">7</td><td class="numi">3</td></tr>
+<tr class="skippedodd"><td rowspan="3">com.proofpoint.discovery.TestCassandraDynamicStore<td><a href="#m32"><b>setup</b>  </a></td><td class="numi">11</td><td class="numi">9</td></tr><tr class="skippedodd"><td><a href="#m33"><b>setup</b>  </a></td><td class="numi">11</td><td class="numi">9</td></tr><tr class="skippedodd"><td><a href="#m34"><b>teardown</b>  </a></td><td class="numi">12</td><td class="numi">10</td></tr>
+<tr class="skippedeven"><td rowspan="1">com.proofpoint.discovery.TestDiscoveryServer<td><a href="#m35"><b>teardownCassandra</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="skippedodd"><td rowspan="1">com.proofpoint.discovery.TestInMemoryStaticStore<td><a href="#m36"><b>setup</b>  </a></td><td class="numi">7</td><td class="numi">3</td></tr>
+<tr class="skippedeven"><td rowspan="1">com.proofpoint.discovery.TestInMemoryDynamicStore<td><a href="#m37"><b>setup</b>  </a></td><td class="numi">11</td><td class="numi">6</td></tr>
+<tr class="skippedodd"><td rowspan="1">com.proofpoint.discovery.TestCassandraStaticStore<td><a href="#m38"><b>setup</b>  </a></td><td class="numi">6</td><td class="numi">1</td></tr>
+<tr class="skippedeven"><td rowspan="1">com.proofpoint.discovery.TestInMemoryStaticStore<td><a href="#m39"><b>setup</b>  </a></td><td class="numi">7</td><td class="numi">3</td></tr>
+<tr class="skippedodd"><td rowspan="3">com.proofpoint.discovery.TestCassandraDynamicStore<td><a href="#m40"><b>teardown</b>  </a></td><td class="numi">12</td><td class="numi">10</td></tr><tr class="skippedodd"><td><a href="#m41"><b>teardown</b>  </a></td><td class="numi">12</td><td class="numi">10</td></tr><tr class="skippedodd"><td><a href="#m42"><b>teardown</b>  </a></td><td class="numi">12</td><td class="numi">10</td></tr>
+<tr class="skippedeven"><td rowspan="1">com.proofpoint.discovery.TestInMemoryStaticStore<td><a href="#m43"><b>setup</b>  </a></td><td class="numi">7</td><td class="numi">3</td></tr>
+<tr class="skippedodd"><td rowspan="1">com.proofpoint.discovery.TestCassandraStaticStore<td><a href="#m44"><b>setup</b>  </a></td><td class="numi">6</td><td class="numi">1</td></tr>
+<tr class="skippedeven"><td rowspan="1">com.proofpoint.discovery.TestCassandraDynamicStore<td><a href="#m45"><b>setup</b>  </a></td><td class="numi">11</td><td class="numi">9</td></tr>
+<tr class="skippedodd"><td rowspan="1">com.proofpoint.discovery.TestCassandraStaticStore<td><a href="#m46"><b>setup</b>  </a></td><td class="numi">6</td><td class="numi">1</td></tr>
+<tr class="skippedeven"><td rowspan="1">com.proofpoint.discovery.TestCassandraDynamicStore<td><a href="#m47"><b>setup</b>  </a></td><td class="numi">11</td><td class="numi">9</td></tr>
+<tr class="skippedodd"><td rowspan="3">com.proofpoint.discovery.TestInMemoryDynamicStore<td><a href="#m48"><b>setup</b>  </a></td><td class="numi">11</td><td class="numi">6</td></tr><tr class="skippedodd"><td><a href="#m49"><b>setup</b>  </a></td><td class="numi">11</td><td class="numi">6</td></tr><tr class="skippedodd"><td><a href="#m50"><b>setup</b>  </a></td><td class="numi">11</td><td class="numi">6</td></tr>
+<tr class="skippedeven"><td rowspan="1">com.proofpoint.discovery.TestInMemoryStaticStore<td><a href="#m51"><b>setup</b>  </a></td><td class="numi">7</td><td class="numi">3</td></tr>
+<tr class="skippedodd"><td rowspan="2">com.proofpoint.discovery.TestCassandraDynamicStore<td><a href="#m52"><b>teardown</b>  </a></td><td class="numi">12</td><td class="numi">10</td></tr><tr class="skippedodd"><td><a href="#m53"><b>teardown</b>  </a></td><td class="numi">12</td><td class="numi">10</td></tr>
+<tr class="skippedeven"><td rowspan="1">com.proofpoint.discovery.TestInMemoryDynamicStore<td><a href="#m54"><b>setup</b>  </a></td><td class="numi">11</td><td class="numi">6</td></tr>
+<tr class="skippedodd"><td rowspan="1">com.proofpoint.discovery.TestCassandraStaticStore<td><a href="#m55"><b>setup</b>  </a></td><td class="numi">6</td><td class="numi">1</td></tr>
+<tr class="skippedeven"><td rowspan="1">com.proofpoint.discovery.TestInMemoryDynamicStore<td><a href="#m56"><b>setup</b>  </a></td><td class="numi">11</td><td class="numi">6</td></tr>
+<tr class="skippedodd"><td rowspan="2">com.proofpoint.discovery.TestCassandraDynamicStore<td><a href="#m57"><b>teardown</b>  </a></td><td class="numi">12</td><td class="numi">10</td></tr><tr class="skippedodd"><td><a href="#m58"><b>teardownCassandra</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="skippedeven"><td rowspan="1">com.proofpoint.discovery.TestInMemoryStaticStore<td><a href="#m59"><b>setup</b>  </a></td><td class="numi">7</td><td class="numi">3</td></tr>
+<tr class="skippedodd"><td rowspan="1">com.proofpoint.discovery.TestCassandraDynamicStoreInitialization<td><a href="#m60"><b>teardownCassandra</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr><th colspan="4">Command line test &#8212; skipped</th></tr>
+<tr class="skippedodd"><td rowspan="1">com.proofpoint.discovery.TestInMemoryDynamicStore<td><a href="#m61"><b>testReplace</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="skippedeven"><td rowspan="1">com.proofpoint.discovery.TestCassandraDynamicStore<td><a href="#m62"><b>testGetByTypeAndPool</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="skippedodd"><td rowspan="1">com.proofpoint.discovery.TestDiscoveryServer<td><a href="#m63"><b>testStaticAnnouncement</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="skippedeven"><td rowspan="1">com.proofpoint.discovery.TestCassandraStaticStore<td><a href="#m64"><b>testPutSingle</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="skippedodd"><td rowspan="2">com.proofpoint.discovery.TestInMemoryDynamicStore<td><a href="#m65"><b>testGetByTypeAndPool</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr><tr class="skippedodd"><td><a href="#m66"><b>testEmpty</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="skippedeven"><td rowspan="1">com.proofpoint.discovery.TestCassandraDynamicStore<td><a href="#m67"><b>testGetByType</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="skippedodd"><td rowspan="2">com.proofpoint.discovery.TestCassandraStaticStore<td><a href="#m68"><b>testDelete</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr><tr class="skippedodd"><td><a href="#m69"><b>testGetByTypeAndPool</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="skippedeven"><td rowspan="1">com.proofpoint.discovery.TestInMemoryDynamicStore<td><a href="#m70"><b>testReplaceExpired</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="skippedodd"><td rowspan="1">com.proofpoint.discovery.TestDiscoveryServer<td><a href="#m71"><b>testDynamicAnnouncement</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="skippedeven"><td rowspan="1">com.proofpoint.discovery.TestInMemoryStaticStore<td><a href="#m72"><b>testCanHandleLotsOfServices</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="skippedodd"><td rowspan="5">com.proofpoint.discovery.TestCassandraDynamicStore<td><a href="#m73"><b>testDeleteThenReInsert</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr><tr class="skippedodd"><td><a href="#m74"><b>testReplaceExpired</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr><tr class="skippedodd"><td><a href="#m75"><b>testExpires</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr><tr class="skippedodd"><td><a href="#m76"><b>testPutMultipleForDifferentNodes</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr><tr class="skippedodd"><td><a href="#m77"><b>testEmpty</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="skippedeven"><td rowspan="1">com.proofpoint.discovery.TestInMemoryDynamicStore<td><a href="#m78"><b>testDeleteThenReInsert</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="skippedodd"><td rowspan="1">com.proofpoint.discovery.TestCassandraDynamicStore<td><a href="#m79"><b>testCannotBeInitalizedTwice</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="skippedeven"><td rowspan="1">com.proofpoint.discovery.TestInMemoryStaticStore<td><a href="#m80"><b>testPutMultiple</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="skippedodd"><td rowspan="1">com.proofpoint.discovery.TestCassandraStaticStore<td><a href="#m81"><b>testPutMultiple</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="skippedeven"><td rowspan="1">com.proofpoint.discovery.TestInMemoryDynamicStore<td><a href="#m82"><b>testGetByType</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="skippedodd"><td rowspan="1">com.proofpoint.discovery.TestInMemoryStaticStore<td><a href="#m83"><b>testPutSingle</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="skippedeven"><td rowspan="1">com.proofpoint.discovery.TestInMemoryDynamicStore<td><a href="#m84"><b>testPutMultipleForSameNode</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="skippedodd"><td rowspan="1">com.proofpoint.discovery.TestInMemoryStaticStore<td><a href="#m85"><b>testGetByTypeAndPool</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="skippedeven"><td rowspan="1">com.proofpoint.discovery.TestCassandraDynamicStore<td><a href="#m86"><b>testReplace</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="skippedodd"><td rowspan="2">com.proofpoint.discovery.TestInMemoryDynamicStore<td><a href="#m87"><b>testExpires</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr><tr class="skippedodd"><td><a href="#m88"><b>testPutSingle</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="skippedeven"><td rowspan="2">com.proofpoint.discovery.TestInMemoryStaticStore<td><a href="#m89"><b>testGetByType</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr><tr class="skippedeven"><td><a href="#m90"><b>testEmpty</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="skippedodd"><td rowspan="1">com.proofpoint.discovery.TestCassandraDynamicStore<td><a href="#m91"><b>testPutMultipleForSameNode</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="skippedeven"><td rowspan="1">com.proofpoint.discovery.TestCassandraStaticStore<td><a href="#m92"><b>testCanHandleLotsOfServices</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="skippedodd"><td rowspan="2">com.proofpoint.discovery.TestInMemoryDynamicStore<td><a href="#m93"><b>testDelete</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr><tr class="skippedodd"><td><a href="#m94"><b>testPutMultipleForDifferentNodes</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="skippedeven"><td rowspan="1">com.proofpoint.discovery.TestCassandraDynamicStore<td><a href="#m95"><b>testDelete</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="skippedodd"><td rowspan="2">com.proofpoint.discovery.TestCassandraStaticStore<td><a href="#m96"><b>testGetByType</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr><tr class="skippedodd"><td><a href="#m97"><b>testEmpty</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="skippedeven"><td rowspan="1">com.proofpoint.discovery.TestCassandraDynamicStore<td><a href="#m98"><b>testPutSingle</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="skippedodd"><td rowspan="1">com.proofpoint.discovery.TestInMemoryStaticStore<td><a href="#m99"><b>testDelete</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr><th colspan="4">Command line test &#8212; passed</th></tr>
+<tr class="passedodd"><td rowspan="1">com.proofpoint.discovery.TestCassandraStoreConfig<td><a href="#m100"><b>testDefaults</b>  </a></td><td class="numi">1</td><td class="numi">145</td></tr>
+<tr class="passedeven"><td rowspan="1">com.proofpoint.discovery.TestServices<td><a href="#m101"><b>testServicesSetIsImmutable</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedodd"><td rowspan="1">com.proofpoint.discovery.TestDynamicAnnouncementResource<td><a href="#m102"><b>testEnvironmentConflict</b>  </a></td><td class="numi">1</td><td class="numi">14</td></tr>
+<tr class="passedeven"><td rowspan="1">com.proofpoint.discovery.TestDynamicServiceAnnouncement<td><a href="#m103"><b>testToString</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedodd"><td rowspan="2">com.proofpoint.discovery.TestStaticAnnouncement<td><a href="#m104"><b>testValidatesNullEnvironment</b>  </a></td><td class="numi">1</td><td class="numi">8</td></tr><tr class="passedodd"><td><a href="#m105"><b>testImmutableProperties</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedeven"><td rowspan="2">com.proofpoint.discovery.TestStaticAnnouncementResource<td><a href="#m106"><b>testDelete</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr><tr class="passedeven"><td><a href="#m107"><b>testMakesUpLocation</b>  </a></td><td class="numi">1</td><td class="numi">9</td></tr>
+<tr class="passedodd"><td rowspan="2">com.proofpoint.discovery.TestDynamicServiceAnnouncement<td><a href="#m108"><b>testCreatesDefensiveCopyOfProperties</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr><tr class="passedodd"><td><a href="#m109"><b>testImmutableProperties</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedeven"><td rowspan="1">com.proofpoint.discovery.TestDynamicAnnouncement<td><a href="#m110"><b>testAllowsNullLocation</b>  </a></td><td class="numi">1</td><td class="numi">30</td></tr>
+<tr class="passedodd"><td rowspan="1">com.proofpoint.discovery.TestId<td><a href="#m111"><b>testToJson</b>  </a></td><td class="numi">1</td><td class="numi">19</td></tr>
+<tr class="passedeven"><td rowspan="1">com.proofpoint.discovery.TestCassandraPaginator<td><a href="#m112"><b>testOne</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedodd"><td rowspan="1">com.proofpoint.discovery.TestServices<td><a href="#m113"><b>testValidatesEnvironmentNotNull</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedeven"><td rowspan="1">com.proofpoint.discovery.TestCassandraPaginator<td><a href="#m114"><b>testThrows</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedodd"><td rowspan="1">com.proofpoint.discovery.TestService<td><a href="#m115"><b>testValidatesPropertiesNotNull</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedeven"><td rowspan="1">com.proofpoint.discovery.TestServiceResource<td><a href="#m116"><b>testGetByType</b>  </a></td><td class="numi">1</td><td class="numi">7</td></tr>
+<tr class="passedodd"><td rowspan="2">com.proofpoint.discovery.TestDynamicAnnouncement<td><a href="#m117"><b>testToString</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr><tr class="passedodd"><td><a href="#m118"><b>testRejectsNullServiceAnnouncements</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedeven"><td rowspan="1">com.proofpoint.discovery.TestService<td><a href="#m119"><b>testValidatesLocationNotNull</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedodd"><td rowspan="1">com.proofpoint.discovery.TestServiceResource<td><a href="#m120"><b>testGetByTypeAndPool</b>  </a></td><td class="numi">1</td><td class="numi">2</td></tr>
+<tr class="passedeven"><td rowspan="1">com.proofpoint.discovery.TestDynamicAnnouncementResource<td><a href="#m121"><b>testPutNew</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedodd"><td rowspan="2">com.proofpoint.discovery.TestCassandraStoreConfig<td><a href="#m122"><b>testExplicitPropertyMappings</b>  </a></td><td class="numi">1</td><td class="numi">155</td></tr><tr class="passedodd"><td><a href="#m123"><b>testValidatesNotNullKeyspace</b>  </a></td><td class="numi">1</td><td class="numi">7</td></tr>
+<tr class="passedeven"><td rowspan="1">com.proofpoint.discovery.TestCassandraPaginator<td><a href="#m124"><b>testMoreThanOnePageWithFullLastPage</b>  </a></td><td class="numi">1</td><td class="numi">4</td></tr>
+<tr class="passedodd"><td rowspan="1">com.proofpoint.discovery.TestDynamicAnnouncementResource<td><a href="#m125"><b>testMakesUpLocation</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedeven"><td rowspan="1">com.proofpoint.discovery.TestService<td><a href="#m126"><b>testCreatesDefensiveCopyOfProperties</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedodd"><td rowspan="1">com.proofpoint.discovery.TestStaticAnnouncementResource<td><a href="#m127"><b>testEnvironmentConflict</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedeven"><td rowspan="1">com.proofpoint.discovery.TestDynamicServiceAnnouncement<td><a href="#m128"><b>testValidatesNullProperties</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedodd"><td rowspan="1">com.proofpoint.discovery.TestDynamicAnnouncementResource<td><a href="#m129"><b>testDeleteMissing</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedeven"><td rowspan="1">com.proofpoint.discovery.TestStaticAnnouncementResource<td><a href="#m130"><b>testPost</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedodd"><td rowspan="1">com.proofpoint.discovery.TestService<td><a href="#m131"><b>testImmutableProperties</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedeven"><td rowspan="1">com.proofpoint.discovery.TestDynamicServiceAnnouncement<td><a href="#m132"><b>testValidatesNullId</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedodd"><td rowspan="2">com.proofpoint.discovery.TestStaticAnnouncement<td><a href="#m133"><b>testCreatesDefensiveCopyOfProperties</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr><tr class="passedodd"><td><a href="#m134"><b>testEquivalence</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedeven"><td rowspan="1">com.proofpoint.discovery.TestCassandraPaginator<td><a href="#m135"><b>testOneFullPage</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedodd"><td rowspan="1">com.proofpoint.discovery.TestDiscoveryConfig<td><a href="#m136"><b>testValidatesNotNullDuration</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedeven"><td rowspan="1">com.proofpoint.discovery.TestId<td><a href="#m137"><b>testFromJson</b>  </a></td><td class="numi">1</td><td class="numi">27</td></tr>
+<tr class="passedodd"><td rowspan="1">com.proofpoint.discovery.TestService<td><a href="#m138"><b>testParseJson</b>  </a></td><td class="numi">1</td><td class="numi">9</td></tr>
+<tr class="passedeven"><td rowspan="1">com.proofpoint.discovery.TestDiscoveryConfig<td><a href="#m139"><b>testExplicitPropertyMappings</b>  </a></td><td class="numi">1</td><td class="numi">5</td></tr>
+<tr class="passedodd"><td rowspan="2">com.proofpoint.discovery.TestService<td><a href="#m140"><b>testEquivalence</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr><tr class="passedodd"><td><a href="#m141"><b>testValidatesTypeNotNull</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedeven"><td rowspan="1">com.proofpoint.discovery.TestStaticAnnouncement<td><a href="#m142"><b>testValidatesNullPool</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedodd"><td rowspan="1">com.proofpoint.discovery.TestDiscoveryConfig<td><a href="#m143"><b>testDefaults</b>  </a></td><td class="numi">1</td><td class="numi">32</td></tr>
+<tr class="passedeven"><td rowspan="1">com.proofpoint.discovery.TestDynamicServiceAnnouncement<td><a href="#m144"><b>testEquivalence</b>  </a></td><td class="numi">1</td><td class="numi">4</td></tr>
+<tr class="passedodd"><td rowspan="1">com.proofpoint.discovery.TestServices<td><a href="#m145"><b>testCreatesDefensiveCopyOfServices</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedeven"><td rowspan="1">com.proofpoint.discovery.TestDynamicAnnouncementResource<td><a href="#m146"><b>testDeleteExisting</b>  </a></td><td class="numi">1</td><td class="numi">135</td></tr>
+<tr class="passedodd"><td rowspan="1">com.proofpoint.discovery.TestCassandraPaginator<td><a href="#m147"><b>testMoreThanOnePageWithPartialLastPage</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedeven"><td rowspan="1">com.proofpoint.discovery.TestStaticAnnouncementResource<td><a href="#m148"><b>testGet</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedodd"><td rowspan="1">com.proofpoint.discovery.TestStaticAnnouncement<td><a href="#m149"><b>testValidatesNullProperties</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedeven"><td rowspan="1">com.proofpoint.discovery.TestServices<td><a href="#m150"><b>testValidatesServicesNotNull</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedodd"><td rowspan="1">com.proofpoint.discovery.TestService<td><a href="#m151"><b>testValidatesIdNotNull</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedeven"><td rowspan="1">com.proofpoint.discovery.TestDynamicServiceAnnouncement<td><a href="#m152"><b>testValidatesNullType</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedodd"><td rowspan="2">com.proofpoint.discovery.TestDynamicAnnouncement<td><a href="#m153"><b>testRejectsNullEnvironment</b>  </a></td><td class="numi">1</td><td class="numi">2</td></tr><tr class="passedodd"><td><a href="#m154"><b>testRejectsNullPool</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedeven"><td rowspan="1">com.proofpoint.discovery.TestDynamicAnnouncementResource<td><a href="#m155"><b>testReplace</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedodd"><td rowspan="1">com.proofpoint.discovery.TestDynamicServiceAnnouncement<td><a href="#m156"><b>testParsing</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedeven"><td rowspan="1">com.proofpoint.discovery.TestDynamicAnnouncement<td><a href="#m157"><b>testParsing</b>  </a></td><td class="numi">1</td><td class="numi">86</td></tr>
+<tr class="passedodd"><td rowspan="1">com.proofpoint.discovery.TestServices<td><a href="#m158"><b>testToJson</b>  </a></td><td class="numi">1</td><td class="numi">7</td></tr>
+<tr class="passedeven"><td rowspan="1">com.proofpoint.discovery.TestStaticAnnouncement<td><a href="#m159"><b>testParsing</b>  </a></td><td class="numi">1</td><td class="numi">7</td></tr>
+<tr class="passedodd"><td rowspan="2">com.proofpoint.discovery.TestService<td><a href="#m160"><b>testToJson</b>  </a></td><td class="numi">1</td><td class="numi">5</td></tr><tr class="passedodd"><td><a href="#m161"><b>testValidatesPoolNotNull</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedeven"><td rowspan="1">com.proofpoint.discovery.TestStaticAnnouncement<td><a href="#m162"><b>testValidatesNullType</b>  </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr class="passedodd"><td rowspan="1">com.proofpoint.discovery.TestDynamicAnnouncement<td><a href="#m163"><b>testValidatesNestedServiceAnnouncements</b>  </a></td><td class="numi">1</td><td class="numi">6</td></tr>
+<tr class="passedeven"><td rowspan="1">com.proofpoint.discovery.TestServiceResource<td><a href="#m164"><b>testGetAll</b>  </a></td><td class="numi">1</td><td class="numi">1</td></tr>
+<tr class="passedodd"><td rowspan="1">com.proofpoint.discovery.TestCassandraPaginator<td><a href="#m165"><b>testEmpty</b>  </a></td><td class="numi">1</td><td class="numi">30</td></tr>
+</table>
+<h1>Command line test</h1>
+<a id="m1"></a><h2>com.proofpoint.discovery.TestCassandraDynamicStore:setup</h2>
+<div style="padding-left:3em">
+<p>org.apache.cassandra.thrift.KsDef.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;ILjava/util/List;)V</p>
+me.prettyprint.cassandra.service.ThriftKsDef.toThrift(ThriftKsDef.java:94)
+<br/>at me.prettyprint.cassandra.service.ThriftCluster$5.execute(ThriftCluster.java:101)
+<br/>at me.prettyprint.cassandra.service.ThriftCluster$5.execute(ThriftCluster.java:97)
+<br/>at me.prettyprint.cassandra.service.Operation.executeAndSetResult(Operation.java:101)
+<br/>at me.prettyprint.cassandra.connection.HConnectionManager.operateWithFailover(HConnectionManager.java:221)
+<br/>at me.prettyprint.cassandra.service.ThriftCluster.addKeyspace(ThriftCluster.java:107)
+<br/>at com.proofpoint.discovery.CassandraDynamicStore.&lt;init&gt;(CassandraDynamicStore.java:82)
+<br/>at com.proofpoint.discovery.TestCassandraDynamicStore.initializeStore(TestCassandraDynamicStore.java:32)
+<br/>at com.proofpoint.discovery.TestDynamicStore.setup(TestDynamicStore.java:35)
+<br/>at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+<br/>at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+<br/>at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+<br/>at java.lang.reflect.Method.invoke(Method.java:597)
+<br/>at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:76)
+<br/>at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:525)
+<br/>at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:202)
+<br/>at org.testng.internal.Invoker.invokeMethod(Invoker.java:613)
+<br/>at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:846)
+<br/>at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1170)
+<br/>at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+<br/>at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+<br/>at org.testng.TestRunner.runWorkers(TestRunner.java:1147)
+<br/>at org.testng.TestRunner.privateRun(TestRunner.java:749)
+<br/>at org.testng.TestRunner.run(TestRunner.java:600)
+<br/>at org.testng.SuiteRunner.runTest(SuiteRunner.java:317)
+<br/>at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:312)
+<br/>at org.testng.SuiteRunner.privateRun(SuiteRunner.java:274)
+<br/>at org.testng.SuiteRunner.run(SuiteRunner.java:223)
+<br/>at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+<br/>at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+<br/>at org.testng.TestNG.runSuitesSequentially(TestNG.java:1039)
+<br/>at org.testng.TestNG.runSuitesLocally(TestNG.java:964)
+<br/>at org.testng.TestNG.run(TestNG.java:900)
+<br/>at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:70)
+<br/>at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:149)
+<br/>at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:95)
+<br/>at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:114)
+<br/>at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+<br/>at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+<br/>at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+<br/>at java.lang.reflect.Method.invoke(Method.java:597)
+<br/>at org.apache.maven.surefire.booter.ProviderFactory$ClassLoaderProxy.invoke(ProviderFactory.java:103)
+<br/>at $Proxy0.invoke(Unknown Source)
+<br/>at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
+<br/>at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
+<br/>at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
+<br/>1 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m2"></a><h2>com.proofpoint.discovery.TestCassandraStaticStore:setup</h2>
+<div style="padding-left:3em">
+<p>org.apache.cassandra.thrift.KsDef.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;ILjava/util/List;)V</p>
+me.prettyprint.cassandra.service.ThriftKsDef.toThrift(ThriftKsDef.java:94)
+<br/>at me.prettyprint.cassandra.service.ThriftCluster$5.execute(ThriftCluster.java:101)
+<br/>at me.prettyprint.cassandra.service.ThriftCluster$5.execute(ThriftCluster.java:97)
+<br/>at me.prettyprint.cassandra.service.Operation.executeAndSetResult(Operation.java:101)
+<br/>at me.prettyprint.cassandra.connection.HConnectionManager.operateWithFailover(HConnectionManager.java:221)
+<br/>at me.prettyprint.cassandra.service.ThriftCluster.addKeyspace(ThriftCluster.java:107)
+<br/>at com.proofpoint.discovery.CassandraStaticStore.&lt;init&gt;(CassandraStaticStore.java:68)
+<br/>at com.proofpoint.discovery.TestCassandraStaticStore.initializeStore(TestCassandraStaticStore.java:28)
+<br/>at com.proofpoint.discovery.TestStaticStore.setup(TestStaticStore.java:28)
+<br/>at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+<br/>at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+<br/>at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+<br/>at java.lang.reflect.Method.invoke(Method.java:597)
+<br/>at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:76)
+<br/>at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:525)
+<br/>at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:202)
+<br/>at org.testng.internal.Invoker.invokeMethod(Invoker.java:613)
+<br/>at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:846)
+<br/>at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1170)
+<br/>at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+<br/>at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+<br/>at org.testng.TestRunner.runWorkers(TestRunner.java:1147)
+<br/>at org.testng.TestRunner.privateRun(TestRunner.java:749)
+<br/>at org.testng.TestRunner.run(TestRunner.java:600)
+<br/>at org.testng.SuiteRunner.runTest(SuiteRunner.java:317)
+<br/>at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:312)
+<br/>at org.testng.SuiteRunner.privateRun(SuiteRunner.java:274)
+<br/>at org.testng.SuiteRunner.run(SuiteRunner.java:223)
+<br/>at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+<br/>at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+<br/>at org.testng.TestNG.runSuitesSequentially(TestNG.java:1039)
+<br/>at org.testng.TestNG.runSuitesLocally(TestNG.java:964)
+<br/>at org.testng.TestNG.run(TestNG.java:900)
+<br/>at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:70)
+<br/>at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:149)
+<br/>at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:95)
+<br/>at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:114)
+<br/>at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+<br/>at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+<br/>at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+<br/>at java.lang.reflect.Method.invoke(Method.java:597)
+<br/>at org.apache.maven.surefire.booter.ProviderFactory$ClassLoaderProxy.invoke(ProviderFactory.java:103)
+<br/>at $Proxy0.invoke(Unknown Source)
+<br/>at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
+<br/>at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
+<br/>at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
+<br/>1 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m3"></a><h2>com.proofpoint.discovery.TestDiscoveryServer:setup</h2>
+<div style="padding-left:3em">
+<p>Guice provision errors:
+
+1) Error injecting constructor, java.lang.NoSuchMethodError: org.apache.cassandra.thrift.KsDef.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;ILjava/util/List;)V
+  at com.proofpoint.discovery.CassandraDynamicStore.&lt;init&gt;(CassandraDynamicStore.java:75)
+  at com.proofpoint.discovery.DiscoveryModule.configure(DiscoveryModule.java:29)
+  while locating com.proofpoint.discovery.CassandraDynamicStore
+
+1 error</p>
+com.google.inject.internal.InjectorImpl$4.get(InjectorImpl.java:987)
+<br/>at com.google.inject.internal.InjectorImpl.getInstance(InjectorImpl.java:1013)
+<br/>at com.proofpoint.discovery.TestDiscoveryServer.setup(TestDiscoveryServer.java:84)
+<br/>38 lines not shown
+<p>Caused by org.apache.cassandra.thrift.KsDef.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;ILjava/util/List;)V</p>
+me.prettyprint.cassandra.service.ThriftKsDef.toThrift(ThriftKsDef.java:94)
+<br/>at me.prettyprint.cassandra.service.ThriftCluster$5.execute(ThriftCluster.java:101)
+<br/>at me.prettyprint.cassandra.service.ThriftCluster$5.execute(ThriftCluster.java:97)
+<br/>at me.prettyprint.cassandra.service.Operation.executeAndSetResult(Operation.java:101)
+<br/>at me.prettyprint.cassandra.connection.HConnectionManager.operateWithFailover(HConnectionManager.java:221)
+<br/>at me.prettyprint.cassandra.service.ThriftCluster.addKeyspace(ThriftCluster.java:107)
+<br/>at com.proofpoint.discovery.CassandraDynamicStore.&lt;init&gt;(CassandraDynamicStore.java:82)
+<br/>at com.proofpoint.discovery.CassandraDynamicStore$$FastClassByGuice$$627d0357.newInstance(&lt;generated&gt;)
+<br/>at com.google.inject.internal.cglib.reflect.$FastConstructor.newInstance(FastConstructor.java:40)
+<br/>at com.google.inject.internal.DefaultConstructionProxyFactory$1.newInstance(DefaultConstructionProxyFactory.java:60)
+<br/>at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:85)
+<br/>at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:254)
+<br/>at com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+<br/>at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1031)
+<br/>at com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+<br/>at com.google.inject.Scopes$1$1.get(Scopes.java:65)
+<br/>at com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:40)
+<br/>at com.google.inject.internal.InjectorImpl$4$1.call(InjectorImpl.java:978)
+<br/>at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1024)
+<br/>at com.google.inject.internal.InjectorImpl$4.get(InjectorImpl.java:974)
+<br/>at com.google.inject.internal.InjectorImpl.getInstance(InjectorImpl.java:1013)
+<br/>at com.proofpoint.discovery.TestDiscoveryServer.setup(TestDiscoveryServer.java:84)
+<br/>38 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m4"></a><h2>com.proofpoint.discovery.TestStaticAndDynamicStores:testBothInitializeProperly</h2>
+<div style="padding-left:3em">
+<p>org.apache.cassandra.thrift.KsDef.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;ILjava/util/List;)V</p>
+me.prettyprint.cassandra.service.ThriftKsDef.toThrift(ThriftKsDef.java:94)
+<br/>at me.prettyprint.cassandra.service.ThriftCluster$5.execute(ThriftCluster.java:101)
+<br/>at me.prettyprint.cassandra.service.ThriftCluster$5.execute(ThriftCluster.java:97)
+<br/>at me.prettyprint.cassandra.service.Operation.executeAndSetResult(Operation.java:101)
+<br/>at me.prettyprint.cassandra.connection.HConnectionManager.operateWithFailover(HConnectionManager.java:221)
+<br/>at me.prettyprint.cassandra.service.ThriftCluster.addKeyspace(ThriftCluster.java:107)
+<br/>at com.proofpoint.discovery.CassandraStaticStore.&lt;init&gt;(CassandraStaticStore.java:68)
+<br/>at com.proofpoint.discovery.TestStaticAndDynamicStores.testBothInitializeProperly(TestStaticAndDynamicStores.java:29)
+<br/>36 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m5"></a><h2>com.proofpoint.discovery.TestCassandraDynamicStoreInitialization:testUpdatesGCGraceSeconds</h2>
+<div style="padding-left:3em">
+<p>org.apache.cassandra.thrift.KsDef.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;ILjava/util/List;)V</p>
+me.prettyprint.cassandra.service.ThriftKsDef.toThrift(ThriftKsDef.java:94)
+<br/>at me.prettyprint.cassandra.service.ThriftCluster$5.execute(ThriftCluster.java:101)
+<br/>at me.prettyprint.cassandra.service.ThriftCluster$5.execute(ThriftCluster.java:97)
+<br/>at me.prettyprint.cassandra.service.Operation.executeAndSetResult(Operation.java:101)
+<br/>at me.prettyprint.cassandra.connection.HConnectionManager.operateWithFailover(HConnectionManager.java:221)
+<br/>at me.prettyprint.cassandra.service.ThriftCluster.addKeyspace(ThriftCluster.java:107)
+<br/>at com.proofpoint.discovery.TestCassandraDynamicStoreInitialization.testUpdatesGCGraceSeconds(TestCassandraDynamicStoreInitialization.java:50)
+<br/>36 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m6"></a><h2>com.proofpoint.discovery.TestCassandraDynamicStore:teardown</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m7"></a><h2>com.proofpoint.discovery.TestStaticAndDynamicStores:teardownCassandra</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m8"></a><h2>com.proofpoint.discovery.TestCassandraDynamicStore:setup</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m9"></a><h2>com.proofpoint.discovery.TestCassandraDynamicStore:setup</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m10"></a><h2>com.proofpoint.discovery.TestInMemoryDynamicStore:setup</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m11"></a><h2>com.proofpoint.discovery.TestCassandraDynamicStore:setup</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m12"></a><h2>com.proofpoint.discovery.TestCassandraStaticStore:setup</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m13"></a><h2>com.proofpoint.discovery.TestCassandraDynamicStore:setup</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m14"></a><h2>com.proofpoint.discovery.TestDiscoveryServer:teardown</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m15"></a><h2>com.proofpoint.discovery.TestCassandraDynamicStore:teardown</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m16"></a><h2>com.proofpoint.discovery.TestCassandraStaticStore:setup</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m17"></a><h2>com.proofpoint.discovery.TestCassandraDynamicStore:teardown</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m18"></a><h2>com.proofpoint.discovery.TestCassandraDynamicStore:setup</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m19"></a><h2>com.proofpoint.discovery.TestCassandraDynamicStore:setup</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m20"></a><h2>com.proofpoint.discovery.TestCassandraDynamicStore:teardown</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m21"></a><h2>com.proofpoint.discovery.TestInMemoryStaticStore:setup</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m22"></a><h2>com.proofpoint.discovery.TestDiscoveryServer:setup</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m23"></a><h2>com.proofpoint.discovery.TestInMemoryDynamicStore:setup</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m24"></a><h2>com.proofpoint.discovery.TestInMemoryDynamicStore:setup</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m25"></a><h2>com.proofpoint.discovery.TestDiscoveryServer:teardown</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m26"></a><h2>com.proofpoint.discovery.TestCassandraDynamicStore:teardown</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m27"></a><h2>com.proofpoint.discovery.TestInMemoryDynamicStore:setup</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m28"></a><h2>com.proofpoint.discovery.TestInMemoryDynamicStore:setup</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m29"></a><h2>com.proofpoint.discovery.TestCassandraStaticStore:teardownCassandra</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m30"></a><h2>com.proofpoint.discovery.TestCassandraDynamicStore:setup</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m31"></a><h2>com.proofpoint.discovery.TestInMemoryStaticStore:setup</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m32"></a><h2>com.proofpoint.discovery.TestCassandraDynamicStore:setup</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m33"></a><h2>com.proofpoint.discovery.TestCassandraDynamicStore:setup</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m34"></a><h2>com.proofpoint.discovery.TestCassandraDynamicStore:teardown</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m35"></a><h2>com.proofpoint.discovery.TestDiscoveryServer:teardownCassandra</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m36"></a><h2>com.proofpoint.discovery.TestInMemoryStaticStore:setup</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m37"></a><h2>com.proofpoint.discovery.TestInMemoryDynamicStore:setup</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m38"></a><h2>com.proofpoint.discovery.TestCassandraStaticStore:setup</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m39"></a><h2>com.proofpoint.discovery.TestInMemoryStaticStore:setup</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m40"></a><h2>com.proofpoint.discovery.TestCassandraDynamicStore:teardown</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m41"></a><h2>com.proofpoint.discovery.TestCassandraDynamicStore:teardown</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m42"></a><h2>com.proofpoint.discovery.TestCassandraDynamicStore:teardown</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m43"></a><h2>com.proofpoint.discovery.TestInMemoryStaticStore:setup</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m44"></a><h2>com.proofpoint.discovery.TestCassandraStaticStore:setup</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m45"></a><h2>com.proofpoint.discovery.TestCassandraDynamicStore:setup</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m46"></a><h2>com.proofpoint.discovery.TestCassandraStaticStore:setup</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m47"></a><h2>com.proofpoint.discovery.TestCassandraDynamicStore:setup</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m48"></a><h2>com.proofpoint.discovery.TestInMemoryDynamicStore:setup</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m49"></a><h2>com.proofpoint.discovery.TestInMemoryDynamicStore:setup</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m50"></a><h2>com.proofpoint.discovery.TestInMemoryDynamicStore:setup</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m51"></a><h2>com.proofpoint.discovery.TestInMemoryStaticStore:setup</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m52"></a><h2>com.proofpoint.discovery.TestCassandraDynamicStore:teardown</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m53"></a><h2>com.proofpoint.discovery.TestCassandraDynamicStore:teardown</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m54"></a><h2>com.proofpoint.discovery.TestInMemoryDynamicStore:setup</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m55"></a><h2>com.proofpoint.discovery.TestCassandraStaticStore:setup</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m56"></a><h2>com.proofpoint.discovery.TestInMemoryDynamicStore:setup</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m57"></a><h2>com.proofpoint.discovery.TestCassandraDynamicStore:teardown</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m58"></a><h2>com.proofpoint.discovery.TestCassandraDynamicStore:teardownCassandra</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m59"></a><h2>com.proofpoint.discovery.TestInMemoryStaticStore:setup</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m60"></a><h2>com.proofpoint.discovery.TestCassandraDynamicStoreInitialization:teardownCassandra</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m61"></a><h2>com.proofpoint.discovery.TestInMemoryDynamicStore:testReplace</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m62"></a><h2>com.proofpoint.discovery.TestCassandraDynamicStore:testGetByTypeAndPool</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m63"></a><h2>com.proofpoint.discovery.TestDiscoveryServer:testStaticAnnouncement</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m64"></a><h2>com.proofpoint.discovery.TestCassandraStaticStore:testPutSingle</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m65"></a><h2>com.proofpoint.discovery.TestInMemoryDynamicStore:testGetByTypeAndPool</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m66"></a><h2>com.proofpoint.discovery.TestInMemoryDynamicStore:testEmpty</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m67"></a><h2>com.proofpoint.discovery.TestCassandraDynamicStore:testGetByType</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m68"></a><h2>com.proofpoint.discovery.TestCassandraStaticStore:testDelete</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m69"></a><h2>com.proofpoint.discovery.TestCassandraStaticStore:testGetByTypeAndPool</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m70"></a><h2>com.proofpoint.discovery.TestInMemoryDynamicStore:testReplaceExpired</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m71"></a><h2>com.proofpoint.discovery.TestDiscoveryServer:testDynamicAnnouncement</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m72"></a><h2>com.proofpoint.discovery.TestInMemoryStaticStore:testCanHandleLotsOfServices</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m73"></a><h2>com.proofpoint.discovery.TestCassandraDynamicStore:testDeleteThenReInsert</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m74"></a><h2>com.proofpoint.discovery.TestCassandraDynamicStore:testReplaceExpired</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m75"></a><h2>com.proofpoint.discovery.TestCassandraDynamicStore:testExpires</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m76"></a><h2>com.proofpoint.discovery.TestCassandraDynamicStore:testPutMultipleForDifferentNodes</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m77"></a><h2>com.proofpoint.discovery.TestCassandraDynamicStore:testEmpty</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m78"></a><h2>com.proofpoint.discovery.TestInMemoryDynamicStore:testDeleteThenReInsert</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m79"></a><h2>com.proofpoint.discovery.TestCassandraDynamicStore:testCannotBeInitalizedTwice</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m80"></a><h2>com.proofpoint.discovery.TestInMemoryStaticStore:testPutMultiple</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m81"></a><h2>com.proofpoint.discovery.TestCassandraStaticStore:testPutMultiple</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m82"></a><h2>com.proofpoint.discovery.TestInMemoryDynamicStore:testGetByType</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m83"></a><h2>com.proofpoint.discovery.TestInMemoryStaticStore:testPutSingle</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m84"></a><h2>com.proofpoint.discovery.TestInMemoryDynamicStore:testPutMultipleForSameNode</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m85"></a><h2>com.proofpoint.discovery.TestInMemoryStaticStore:testGetByTypeAndPool</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m86"></a><h2>com.proofpoint.discovery.TestCassandraDynamicStore:testReplace</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m87"></a><h2>com.proofpoint.discovery.TestInMemoryDynamicStore:testExpires</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m88"></a><h2>com.proofpoint.discovery.TestInMemoryDynamicStore:testPutSingle</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m89"></a><h2>com.proofpoint.discovery.TestInMemoryStaticStore:testGetByType</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m90"></a><h2>com.proofpoint.discovery.TestInMemoryStaticStore:testEmpty</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m91"></a><h2>com.proofpoint.discovery.TestCassandraDynamicStore:testPutMultipleForSameNode</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m92"></a><h2>com.proofpoint.discovery.TestCassandraStaticStore:testCanHandleLotsOfServices</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m93"></a><h2>com.proofpoint.discovery.TestInMemoryDynamicStore:testDelete</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m94"></a><h2>com.proofpoint.discovery.TestInMemoryDynamicStore:testPutMultipleForDifferentNodes</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m95"></a><h2>com.proofpoint.discovery.TestCassandraDynamicStore:testDelete</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m96"></a><h2>com.proofpoint.discovery.TestCassandraStaticStore:testGetByType</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m97"></a><h2>com.proofpoint.discovery.TestCassandraStaticStore:testEmpty</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m98"></a><h2>com.proofpoint.discovery.TestCassandraDynamicStore:testPutSingle</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m99"></a><h2>com.proofpoint.discovery.TestInMemoryStaticStore:testDelete</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m100"></a><h2>com.proofpoint.discovery.TestCassandraStoreConfig:testDefaults</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m101"></a><h2>com.proofpoint.discovery.TestServices:testServicesSetIsImmutable</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m102"></a><h2>com.proofpoint.discovery.TestDynamicAnnouncementResource:testEnvironmentConflict</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m103"></a><h2>com.proofpoint.discovery.TestDynamicServiceAnnouncement:testToString</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m104"></a><h2>com.proofpoint.discovery.TestStaticAnnouncement:testValidatesNullEnvironment</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m105"></a><h2>com.proofpoint.discovery.TestStaticAnnouncement:testImmutableProperties</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m106"></a><h2>com.proofpoint.discovery.TestStaticAnnouncementResource:testDelete</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m107"></a><h2>com.proofpoint.discovery.TestStaticAnnouncementResource:testMakesUpLocation</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m108"></a><h2>com.proofpoint.discovery.TestDynamicServiceAnnouncement:testCreatesDefensiveCopyOfProperties</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m109"></a><h2>com.proofpoint.discovery.TestDynamicServiceAnnouncement:testImmutableProperties</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m110"></a><h2>com.proofpoint.discovery.TestDynamicAnnouncement:testAllowsNullLocation</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m111"></a><h2>com.proofpoint.discovery.TestId:testToJson</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m112"></a><h2>com.proofpoint.discovery.TestCassandraPaginator:testOne</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m113"></a><h2>com.proofpoint.discovery.TestServices:testValidatesEnvironmentNotNull</h2>
+<div style="padding-left:3em">
+<p>environment is null</p>
+com.google.common.base.Preconditions.checkNotNull(Preconditions.java:204)
+<br/>at com.proofpoint.discovery.Services.&lt;init&gt;(Services.java:18)
+<br/>at com.proofpoint.discovery.TestServices.testValidatesEnvironmentNotNull(TestServices.java:71)
+<br/>36 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m114"></a><h2>com.proofpoint.discovery.TestCassandraPaginator:testThrows</h2>
+<div style="padding-left:3em">
+<p>null</p>
+com.proofpoint.discovery.CassandraPaginator$QueryIterator.next(CassandraPaginator.java:60)
+<br/>at com.proofpoint.discovery.CassandraPaginator$QueryIterator.next(CassandraPaginator.java:27)
+<br/>at com.proofpoint.discovery.TestCassandraPaginator.testThrows(TestCassandraPaginator.java:57)
+<br/>36 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m115"></a><h2>com.proofpoint.discovery.TestService:testValidatesPropertiesNotNull</h2>
+<div style="padding-left:3em">
+<p>properties is null</p>
+com.google.common.base.Preconditions.checkNotNull(Preconditions.java:204)
+<br/>at com.proofpoint.discovery.Service.&lt;init&gt;(Service.java:35)
+<br/>at com.proofpoint.discovery.TestService.testValidatesPropertiesNotNull(TestService.java:117)
+<br/>36 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m116"></a><h2>com.proofpoint.discovery.TestServiceResource:testGetByType</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m117"></a><h2>com.proofpoint.discovery.TestDynamicAnnouncement:testToString</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m118"></a><h2>com.proofpoint.discovery.TestDynamicAnnouncement:testRejectsNullServiceAnnouncements</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m119"></a><h2>com.proofpoint.discovery.TestService:testValidatesLocationNotNull</h2>
+<div style="padding-left:3em">
+<p>location is null</p>
+com.google.common.base.Preconditions.checkNotNull(Preconditions.java:204)
+<br/>at com.proofpoint.discovery.Service.&lt;init&gt;(Service.java:34)
+<br/>at com.proofpoint.discovery.TestService.testValidatesLocationNotNull(TestService.java:111)
+<br/>36 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m120"></a><h2>com.proofpoint.discovery.TestServiceResource:testGetByTypeAndPool</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m121"></a><h2>com.proofpoint.discovery.TestDynamicAnnouncementResource:testPutNew</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m122"></a><h2>com.proofpoint.discovery.TestCassandraStoreConfig:testExplicitPropertyMappings</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m123"></a><h2>com.proofpoint.discovery.TestCassandraStoreConfig:testValidatesNotNullKeyspace</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m124"></a><h2>com.proofpoint.discovery.TestCassandraPaginator:testMoreThanOnePageWithFullLastPage</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m125"></a><h2>com.proofpoint.discovery.TestDynamicAnnouncementResource:testMakesUpLocation</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m126"></a><h2>com.proofpoint.discovery.TestService:testCreatesDefensiveCopyOfProperties</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m127"></a><h2>com.proofpoint.discovery.TestStaticAnnouncementResource:testEnvironmentConflict</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m128"></a><h2>com.proofpoint.discovery.TestDynamicServiceAnnouncement:testValidatesNullProperties</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m129"></a><h2>com.proofpoint.discovery.TestDynamicAnnouncementResource:testDeleteMissing</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m130"></a><h2>com.proofpoint.discovery.TestStaticAnnouncementResource:testPost</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m131"></a><h2>com.proofpoint.discovery.TestService:testImmutableProperties</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m132"></a><h2>com.proofpoint.discovery.TestDynamicServiceAnnouncement:testValidatesNullId</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m133"></a><h2>com.proofpoint.discovery.TestStaticAnnouncement:testCreatesDefensiveCopyOfProperties</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m134"></a><h2>com.proofpoint.discovery.TestStaticAnnouncement:testEquivalence</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m135"></a><h2>com.proofpoint.discovery.TestCassandraPaginator:testOneFullPage</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m136"></a><h2>com.proofpoint.discovery.TestDiscoveryConfig:testValidatesNotNullDuration</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m137"></a><h2>com.proofpoint.discovery.TestId:testFromJson</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m138"></a><h2>com.proofpoint.discovery.TestService:testParseJson</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m139"></a><h2>com.proofpoint.discovery.TestDiscoveryConfig:testExplicitPropertyMappings</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m140"></a><h2>com.proofpoint.discovery.TestService:testEquivalence</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m141"></a><h2>com.proofpoint.discovery.TestService:testValidatesTypeNotNull</h2>
+<div style="padding-left:3em">
+<p>type is null</p>
+com.google.common.base.Preconditions.checkNotNull(Preconditions.java:204)
+<br/>at com.proofpoint.discovery.Service.&lt;init&gt;(Service.java:32)
+<br/>at com.proofpoint.discovery.TestService.testValidatesTypeNotNull(TestService.java:99)
+<br/>36 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m142"></a><h2>com.proofpoint.discovery.TestStaticAnnouncement:testValidatesNullPool</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m143"></a><h2>com.proofpoint.discovery.TestDiscoveryConfig:testDefaults</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m144"></a><h2>com.proofpoint.discovery.TestDynamicServiceAnnouncement:testEquivalence</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m145"></a><h2>com.proofpoint.discovery.TestServices:testCreatesDefensiveCopyOfServices</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m146"></a><h2>com.proofpoint.discovery.TestDynamicAnnouncementResource:testDeleteExisting</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m147"></a><h2>com.proofpoint.discovery.TestCassandraPaginator:testMoreThanOnePageWithPartialLastPage</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m148"></a><h2>com.proofpoint.discovery.TestStaticAnnouncementResource:testGet</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m149"></a><h2>com.proofpoint.discovery.TestStaticAnnouncement:testValidatesNullProperties</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m150"></a><h2>com.proofpoint.discovery.TestServices:testValidatesServicesNotNull</h2>
+<div style="padding-left:3em">
+<p>services is null</p>
+com.google.common.base.Preconditions.checkNotNull(Preconditions.java:204)
+<br/>at com.proofpoint.discovery.Services.&lt;init&gt;(Services.java:19)
+<br/>at com.proofpoint.discovery.TestServices.testValidatesServicesNotNull(TestServices.java:77)
+<br/>36 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m151"></a><h2>com.proofpoint.discovery.TestService:testValidatesIdNotNull</h2>
+<div style="padding-left:3em">
+<p>id is null</p>
+com.google.common.base.Preconditions.checkNotNull(Preconditions.java:204)
+<br/>at com.proofpoint.discovery.Service.&lt;init&gt;(Service.java:31)
+<br/>at com.proofpoint.discovery.TestService.testValidatesIdNotNull(TestService.java:93)
+<br/>36 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m152"></a><h2>com.proofpoint.discovery.TestDynamicServiceAnnouncement:testValidatesNullType</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m153"></a><h2>com.proofpoint.discovery.TestDynamicAnnouncement:testRejectsNullEnvironment</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m154"></a><h2>com.proofpoint.discovery.TestDynamicAnnouncement:testRejectsNullPool</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m155"></a><h2>com.proofpoint.discovery.TestDynamicAnnouncementResource:testReplace</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m156"></a><h2>com.proofpoint.discovery.TestDynamicServiceAnnouncement:testParsing</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m157"></a><h2>com.proofpoint.discovery.TestDynamicAnnouncement:testParsing</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m158"></a><h2>com.proofpoint.discovery.TestServices:testToJson</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m159"></a><h2>com.proofpoint.discovery.TestStaticAnnouncement:testParsing</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m160"></a><h2>com.proofpoint.discovery.TestService:testToJson</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m161"></a><h2>com.proofpoint.discovery.TestService:testValidatesPoolNotNull</h2>
+<div style="padding-left:3em">
+<p>pool is null</p>
+com.google.common.base.Preconditions.checkNotNull(Preconditions.java:204)
+<br/>at com.proofpoint.discovery.Service.&lt;init&gt;(Service.java:33)
+<br/>at com.proofpoint.discovery.TestService.testValidatesPoolNotNull(TestService.java:105)
+<br/>36 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m162"></a><h2>com.proofpoint.discovery.TestStaticAnnouncement:testValidatesNullType</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m163"></a><h2>com.proofpoint.discovery.TestDynamicAnnouncement:testValidatesNestedServiceAnnouncements</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m164"></a><h2>com.proofpoint.discovery.TestServiceResource:testGetAll</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m165"></a><h2>com.proofpoint.discovery.TestCassandraPaginator:testEmpty</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+</body></html>

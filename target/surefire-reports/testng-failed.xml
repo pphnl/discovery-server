@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite verbose="0" name="Failed suite [Command line suite]">
+  <test name="Command line test(failed)" preserve-order="false">
+    <classes>
+      <class name="com.proofpoint.discovery.TestCassandraDynamicStoreInitialization">
+        <methods>
+          <include name="setupCassandra"/>
+          <include name="testUpdatesGCGraceSeconds"/>
+        </methods>
+      </class>
+      <class name="com.proofpoint.discovery.TestDynamicAnnouncementResource">
+        <methods>
+          <include name="setup"/>
+        </methods>
+      </class>
+      <class name="com.proofpoint.discovery.TestCassandraDynamicStore">
+        <methods>
+          <include name="setup"/>
+          <include name="testEmpty"/>
+          <include name="setupCassandra"/>
+          <include name="testGetByTypeAndPool"/>
+          <include name="testReplace"/>
+          <include name="testPutMultipleForSameNode"/>
+          <include name="testCannotBeInitalizedTwice"/>
+          <include name="testDeleteThenReInsert"/>
+          <include name="testGetByType"/>
+          <include name="testDelete"/>
+          <include name="testPutMultipleForDifferentNodes"/>
+          <include name="testPutSingle"/>
+          <include name="testReplaceExpired"/>
+          <include name="testExpires"/>
+        </methods>
+      </class>
+      <class name="com.proofpoint.discovery.TestDiscoveryServer">
+        <methods>
+          <include name="setup"/>
+          <include name="setupCassandra"/>
+          <include name="testDynamicAnnouncement"/>
+          <include name="testStaticAnnouncement"/>
+        </methods>
+      </class>
+      <class name="com.proofpoint.discovery.TestInMemoryStaticStore">
+        <methods>
+          <include name="testPutMultiple"/>
+          <include name="testCanHandleLotsOfServices"/>
+          <include name="testPutSingle"/>
+          <include name="testEmpty"/>
+          <include name="testGetByType"/>
+          <include name="testDelete"/>
+          <include name="testGetByTypeAndPool"/>
+        </methods>
+      </class>
+      <class name="com.proofpoint.discovery.TestCassandraStaticStore">
+        <methods>
+          <include name="testPutMultiple"/>
+          <include name="testCanHandleLotsOfServices"/>
+          <include name="testPutSingle"/>
+          <include name="setupCassandra"/>
+          <include name="testEmpty"/>
+          <include name="setup"/>
+          <include name="testGetByType"/>
+          <include name="testDelete"/>
+          <include name="testGetByTypeAndPool"/>
+        </methods>
+      </class>
+      <class name="com.proofpoint.discovery.TestInMemoryDynamicStore">
+        <methods>
+          <include name="testPutMultipleForDifferentNodes"/>
+          <include name="testEmpty"/>
+          <include name="testReplaceExpired"/>
+          <include name="testPutSingle"/>
+          <include name="testExpires"/>
+          <include name="testReplace"/>
+          <include name="testGetByTypeAndPool"/>
+          <include name="testPutMultipleForSameNode"/>
+          <include name="testGetByType"/>
+          <include name="testDeleteThenReInsert"/>
+          <include name="testDelete"/>
+        </methods>
+      </class>
+      <class name="com.proofpoint.discovery.TestServiceResource">
+        <methods>
+          <include name="setUp"/>
+        </methods>
+      </class>
+      <class name="com.proofpoint.discovery.TestStaticAnnouncementResource">
+        <methods>
+          <include name="setup"/>
+        </methods>
+      </class>
+      <class name="com.proofpoint.discovery.TestStaticAndDynamicStores">
+        <methods>
+          <include name="setupCassandra"/>
+          <include name="testBothInitializeProperly"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+</suite>

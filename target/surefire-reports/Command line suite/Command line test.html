@@ -1,0 +1,1705 @@
+<html>
+<head>
+<title>TestNG:  Command line test</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Command line test</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>66/2/39</td>
+</tr><tr>
+<td>Started on:</td><td>Fri Aug 05 16:39:55 PDT 2011</td>
+</tr>
+<tr><td>Total time:</td><td>3 seconds (3554 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraDynamicStore.setup()'><b>setup</b><br>Test class: com.proofpoint.discovery.TestCassandraDynamicStore</td>
+<td><div><pre>java.lang.NoSuchMethodError: org.apache.cassandra.thrift.KsDef.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;ILjava/util/List;)V
+	at me.prettyprint.cassandra.service.ThriftKsDef.toThrift(ThriftKsDef.java:94)
+	at me.prettyprint.cassandra.service.ThriftCluster$5.execute(ThriftCluster.java:101)
+	at me.prettyprint.cassandra.service.ThriftCluster$5.execute(ThriftCluster.java:97)
+	at me.prettyprint.cassandra.service.Operation.executeAndSetResult(Operation.java:101)
+	at me.prettyprint.cassandra.connection.HConnectionManager.operateWithFailover(HConnectionManager.java:221)
+	at me.prettyprint.cassandra.service.ThriftCluster.addKeyspace(ThriftCluster.java:107)
+	at com.proofpoint.discovery.CassandraDynamicStore.&lt;init&gt;(CassandraDynamicStore.java:82)
+	at com.proofpoint.discovery.TestCassandraDynamicStore.initializeStore(TestCassandraDynamicStore.java:32)
+	at com.proofpoint.discovery.TestDynamicStore.setup(TestDynamicStore.java:35)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:70)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:149)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:95)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:114)
+	at org.apache.maven.surefire.booter.ProviderFactory$ClassLoaderProxy.invoke(ProviderFactory.java:103)
+	at $Proxy0.invoke(Unknown Source)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1649902221", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1649902221'><pre>java.lang.NoSuchMethodError: org.apache.cassandra.thrift.KsDef.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;ILjava/util/List;)V
+	at me.prettyprint.cassandra.service.ThriftKsDef.toThrift(ThriftKsDef.java:94)
+	at me.prettyprint.cassandra.service.ThriftCluster$5.execute(ThriftCluster.java:101)
+	at me.prettyprint.cassandra.service.ThriftCluster$5.execute(ThriftCluster.java:97)
+	at me.prettyprint.cassandra.service.Operation.executeAndSetResult(Operation.java:101)
+	at me.prettyprint.cassandra.connection.HConnectionManager.operateWithFailover(HConnectionManager.java:221)
+	at me.prettyprint.cassandra.service.ThriftCluster.addKeyspace(ThriftCluster.java:107)
+	at com.proofpoint.discovery.CassandraDynamicStore.&lt;init&gt;(CassandraDynamicStore.java:82)
+	at com.proofpoint.discovery.TestCassandraDynamicStore.initializeStore(TestCassandraDynamicStore.java:32)
+	at com.proofpoint.discovery.TestDynamicStore.setup(TestDynamicStore.java:35)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:76)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:525)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:202)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:613)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:846)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1170)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.runWorkers(TestRunner.java:1147)
+	at org.testng.TestRunner.privateRun(TestRunner.java:749)
+	at org.testng.TestRunner.run(TestRunner.java:600)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:317)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:274)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:223)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1039)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:964)
+	at org.testng.TestNG.run(TestNG.java:900)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:70)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:149)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:95)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:114)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.apache.maven.surefire.booter.ProviderFactory$ClassLoaderProxy.invoke(ProviderFactory.java:103)
+	at $Proxy0.invoke(Unknown Source)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
+</pre></div></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraDynamicStore@681e2ca7</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestDiscoveryServer.setup()'><b>setup</b><br>Test class: com.proofpoint.discovery.TestDiscoveryServer</td>
+<td><div><pre>com.google.inject.ProvisionException: Guice provision errors:
+
+1) Error injecting constructor, java.lang.NoSuchMethodError: org.apache.cassandra.thrift.KsDef.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;ILjava/util/List;)V
+  at com.proofpoint.discovery.CassandraDynamicStore.&lt;init&gt;(CassandraDynamicStore.java:75)
+  at com.proofpoint.discovery.DiscoveryModule.configure(DiscoveryModule.java:29)
+  while locating com.proofpoint.discovery.CassandraDynamicStore
+
+1 error
+	at com.google.inject.internal.InjectorImpl$4.get(InjectorImpl.java:987)
+	at com.google.inject.internal.InjectorImpl.getInstance(InjectorImpl.java:1013)
+	at com.proofpoint.discovery.TestDiscoveryServer.setup(TestDiscoveryServer.java:84)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:70)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:149)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:95)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:114)
+	at org.apache.maven.surefire.booter.ProviderFactory$ClassLoaderProxy.invoke(ProviderFactory.java:103)
+	at $Proxy0.invoke(Unknown Source)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
+Caused by: java.lang.NoSuchMethodError: org.apache.cassandra.thrift.KsDef.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;ILjava/util/List;)V
+	at me.prettyprint.cassandra.service.ThriftKsDef.toThrift(ThriftKsDef.java:94)
+	at me.prettyprint.cassandra.service.ThriftCluster$5.execute(ThriftCluster.java:101)
+	at me.prettyprint.cassandra.service.ThriftCluster$5.execute(ThriftCluster.java:97)
+	at me.prettyprint.cassandra.service.Operation.executeAndSetResult(Operation.java:101)
+	at me.prettyprint.cassandra.connection.HConnectionManager.operateWithFailover(HConnectionManager.java:221)
+	at me.prettyprint.cassandra.service.ThriftCluster.addKeyspace(ThriftCluster.java:107)
+	at com.proofpoint.discovery.CassandraDynamicStore.&lt;init&gt;(CassandraDynamicStore.java:82)
+	at com.proofpoint.discovery.CassandraDynamicStore$$FastClassByGuice$$627d0357.newInstance(&lt;generated&gt;)
+	at com.google.inject.internal.DefaultConstructionProxyFactory$1.newInstance(DefaultConstructionProxyFactory.java:60)
+	at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:85)
+	at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:254)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1031)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+	at com.google.inject.Scopes$1$1.get(Scopes.java:65)
+	at com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:40)
+	at com.google.inject.internal.InjectorImpl$4$1.call(InjectorImpl.java:978)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1024)
+	at com.google.inject.internal.InjectorImpl$4.get(InjectorImpl.java:974)
+	... 39 more
+... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1992805087", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1992805087'><pre>com.google.inject.ProvisionException: Guice provision errors:
+
+1) Error injecting constructor, java.lang.NoSuchMethodError: org.apache.cassandra.thrift.KsDef.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;ILjava/util/List;)V
+  at com.proofpoint.discovery.CassandraDynamicStore.&lt;init&gt;(CassandraDynamicStore.java:75)
+  at com.proofpoint.discovery.DiscoveryModule.configure(DiscoveryModule.java:29)
+  while locating com.proofpoint.discovery.CassandraDynamicStore
+
+1 error
+	at com.google.inject.internal.InjectorImpl$4.get(InjectorImpl.java:987)
+	at com.google.inject.internal.InjectorImpl.getInstance(InjectorImpl.java:1013)
+	at com.proofpoint.discovery.TestDiscoveryServer.setup(TestDiscoveryServer.java:84)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:76)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:525)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:202)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:613)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:846)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1170)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.runWorkers(TestRunner.java:1147)
+	at org.testng.TestRunner.privateRun(TestRunner.java:749)
+	at org.testng.TestRunner.run(TestRunner.java:600)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:317)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:274)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:223)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1039)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:964)
+	at org.testng.TestNG.run(TestNG.java:900)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:70)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:149)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:95)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:114)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.apache.maven.surefire.booter.ProviderFactory$ClassLoaderProxy.invoke(ProviderFactory.java:103)
+	at $Proxy0.invoke(Unknown Source)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
+Caused by: java.lang.NoSuchMethodError: org.apache.cassandra.thrift.KsDef.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;ILjava/util/List;)V
+	at me.prettyprint.cassandra.service.ThriftKsDef.toThrift(ThriftKsDef.java:94)
+	at me.prettyprint.cassandra.service.ThriftCluster$5.execute(ThriftCluster.java:101)
+	at me.prettyprint.cassandra.service.ThriftCluster$5.execute(ThriftCluster.java:97)
+	at me.prettyprint.cassandra.service.Operation.executeAndSetResult(Operation.java:101)
+	at me.prettyprint.cassandra.connection.HConnectionManager.operateWithFailover(HConnectionManager.java:221)
+	at me.prettyprint.cassandra.service.ThriftCluster.addKeyspace(ThriftCluster.java:107)
+	at com.proofpoint.discovery.CassandraDynamicStore.&lt;init&gt;(CassandraDynamicStore.java:82)
+	at com.proofpoint.discovery.CassandraDynamicStore$$FastClassByGuice$$627d0357.newInstance(&lt;generated&gt;)
+	at com.google.inject.internal.cglib.reflect.$FastConstructor.newInstance(FastConstructor.java:40)
+	at com.google.inject.internal.DefaultConstructionProxyFactory$1.newInstance(DefaultConstructionProxyFactory.java:60)
+	at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:85)
+	at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:254)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1031)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+	at com.google.inject.Scopes$1$1.get(Scopes.java:65)
+	at com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:40)
+	at com.google.inject.internal.InjectorImpl$4$1.call(InjectorImpl.java:978)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1024)
+	at com.google.inject.internal.InjectorImpl$4.get(InjectorImpl.java:974)
+	... 39 more
+</pre></div></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestDiscoveryServer@10ad8659</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraStaticStore.setup()'><b>setup</b><br>Test class: com.proofpoint.discovery.TestCassandraStaticStore</td>
+<td><div><pre>java.lang.NoSuchMethodError: org.apache.cassandra.thrift.KsDef.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;ILjava/util/List;)V
+	at me.prettyprint.cassandra.service.ThriftKsDef.toThrift(ThriftKsDef.java:94)
+	at me.prettyprint.cassandra.service.ThriftCluster$5.execute(ThriftCluster.java:101)
+	at me.prettyprint.cassandra.service.ThriftCluster$5.execute(ThriftCluster.java:97)
+	at me.prettyprint.cassandra.service.Operation.executeAndSetResult(Operation.java:101)
+	at me.prettyprint.cassandra.connection.HConnectionManager.operateWithFailover(HConnectionManager.java:221)
+	at me.prettyprint.cassandra.service.ThriftCluster.addKeyspace(ThriftCluster.java:107)
+	at com.proofpoint.discovery.CassandraStaticStore.&lt;init&gt;(CassandraStaticStore.java:68)
+	at com.proofpoint.discovery.TestCassandraStaticStore.initializeStore(TestCassandraStaticStore.java:28)
+	at com.proofpoint.discovery.TestStaticStore.setup(TestStaticStore.java:28)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:70)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:149)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:95)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:114)
+	at org.apache.maven.surefire.booter.ProviderFactory$ClassLoaderProxy.invoke(ProviderFactory.java:103)
+	at $Proxy0.invoke(Unknown Source)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1527310921", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1527310921'><pre>java.lang.NoSuchMethodError: org.apache.cassandra.thrift.KsDef.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;ILjava/util/List;)V
+	at me.prettyprint.cassandra.service.ThriftKsDef.toThrift(ThriftKsDef.java:94)
+	at me.prettyprint.cassandra.service.ThriftCluster$5.execute(ThriftCluster.java:101)
+	at me.prettyprint.cassandra.service.ThriftCluster$5.execute(ThriftCluster.java:97)
+	at me.prettyprint.cassandra.service.Operation.executeAndSetResult(Operation.java:101)
+	at me.prettyprint.cassandra.connection.HConnectionManager.operateWithFailover(HConnectionManager.java:221)
+	at me.prettyprint.cassandra.service.ThriftCluster.addKeyspace(ThriftCluster.java:107)
+	at com.proofpoint.discovery.CassandraStaticStore.&lt;init&gt;(CassandraStaticStore.java:68)
+	at com.proofpoint.discovery.TestCassandraStaticStore.initializeStore(TestCassandraStaticStore.java:28)
+	at com.proofpoint.discovery.TestStaticStore.setup(TestStaticStore.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:76)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:525)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:202)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:613)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:846)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1170)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.runWorkers(TestRunner.java:1147)
+	at org.testng.TestRunner.privateRun(TestRunner.java:749)
+	at org.testng.TestRunner.run(TestRunner.java:600)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:317)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:274)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:223)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1039)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:964)
+	at org.testng.TestNG.run(TestNG.java:900)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:70)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:149)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:95)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:114)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.apache.maven.surefire.booter.ProviderFactory$ClassLoaderProxy.invoke(ProviderFactory.java:103)
+	at $Proxy0.invoke(Unknown Source)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
+</pre></div></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraStaticStore@42e020c9</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraDynamicStore.setup()'><b>setup</b><br>Test class: com.proofpoint.discovery.TestCassandraDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraDynamicStore@681e2ca7</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraDynamicStore.setup()'><b>setup</b><br>Test class: com.proofpoint.discovery.TestCassandraDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraDynamicStore@681e2ca7</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraDynamicStore.setup()'><b>setup</b><br>Test class: com.proofpoint.discovery.TestCassandraDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraDynamicStore@681e2ca7</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraDynamicStore.setup()'><b>setup</b><br>Test class: com.proofpoint.discovery.TestCassandraDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraDynamicStore@681e2ca7</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraDynamicStore.setup()'><b>setup</b><br>Test class: com.proofpoint.discovery.TestCassandraDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraDynamicStore@681e2ca7</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraDynamicStore.setup()'><b>setup</b><br>Test class: com.proofpoint.discovery.TestCassandraDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraDynamicStore@681e2ca7</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraDynamicStore.setup()'><b>setup</b><br>Test class: com.proofpoint.discovery.TestCassandraDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraDynamicStore@681e2ca7</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraDynamicStore.setup()'><b>setup</b><br>Test class: com.proofpoint.discovery.TestCassandraDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraDynamicStore@681e2ca7</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraDynamicStore.setup()'><b>setup</b><br>Test class: com.proofpoint.discovery.TestCassandraDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraDynamicStore@681e2ca7</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraDynamicStore.setup()'><b>setup</b><br>Test class: com.proofpoint.discovery.TestCassandraDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraDynamicStore@681e2ca7</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraDynamicStore.setup()'><b>setup</b><br>Test class: com.proofpoint.discovery.TestCassandraDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraDynamicStore@681e2ca7</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestDiscoveryServer.setup()'><b>setup</b><br>Test class: com.proofpoint.discovery.TestDiscoveryServer</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestDiscoveryServer@10ad8659</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestInMemoryDynamicStore.setup()'><b>setup</b><br>Test class: com.proofpoint.discovery.TestInMemoryDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestInMemoryDynamicStore@d576e70</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestInMemoryDynamicStore.setup()'><b>setup</b><br>Test class: com.proofpoint.discovery.TestInMemoryDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestInMemoryDynamicStore@d576e70</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestInMemoryDynamicStore.setup()'><b>setup</b><br>Test class: com.proofpoint.discovery.TestInMemoryDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestInMemoryDynamicStore@d576e70</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestInMemoryDynamicStore.setup()'><b>setup</b><br>Test class: com.proofpoint.discovery.TestInMemoryDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestInMemoryDynamicStore@d576e70</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestInMemoryDynamicStore.setup()'><b>setup</b><br>Test class: com.proofpoint.discovery.TestInMemoryDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestInMemoryDynamicStore@d576e70</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestInMemoryDynamicStore.setup()'><b>setup</b><br>Test class: com.proofpoint.discovery.TestInMemoryDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestInMemoryDynamicStore@d576e70</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestInMemoryDynamicStore.setup()'><b>setup</b><br>Test class: com.proofpoint.discovery.TestInMemoryDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestInMemoryDynamicStore@d576e70</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestInMemoryDynamicStore.setup()'><b>setup</b><br>Test class: com.proofpoint.discovery.TestInMemoryDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestInMemoryDynamicStore@d576e70</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestInMemoryDynamicStore.setup()'><b>setup</b><br>Test class: com.proofpoint.discovery.TestInMemoryDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestInMemoryDynamicStore@d576e70</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestInMemoryDynamicStore.setup()'><b>setup</b><br>Test class: com.proofpoint.discovery.TestInMemoryDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestInMemoryDynamicStore@d576e70</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestInMemoryDynamicStore.setup()'><b>setup</b><br>Test class: com.proofpoint.discovery.TestInMemoryDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestInMemoryDynamicStore@d576e70</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraStaticStore.setup()'><b>setup</b><br>Test class: com.proofpoint.discovery.TestCassandraStaticStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraStaticStore@42e020c9</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraStaticStore.setup()'><b>setup</b><br>Test class: com.proofpoint.discovery.TestCassandraStaticStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraStaticStore@42e020c9</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraStaticStore.setup()'><b>setup</b><br>Test class: com.proofpoint.discovery.TestCassandraStaticStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraStaticStore@42e020c9</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraStaticStore.setup()'><b>setup</b><br>Test class: com.proofpoint.discovery.TestCassandraStaticStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraStaticStore@42e020c9</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraStaticStore.setup()'><b>setup</b><br>Test class: com.proofpoint.discovery.TestCassandraStaticStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraStaticStore@42e020c9</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraStaticStore.setup()'><b>setup</b><br>Test class: com.proofpoint.discovery.TestCassandraStaticStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraStaticStore@42e020c9</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestInMemoryStaticStore.setup()'><b>setup</b><br>Test class: com.proofpoint.discovery.TestInMemoryStaticStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestInMemoryStaticStore@8888e6c</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestInMemoryStaticStore.setup()'><b>setup</b><br>Test class: com.proofpoint.discovery.TestInMemoryStaticStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestInMemoryStaticStore@8888e6c</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestInMemoryStaticStore.setup()'><b>setup</b><br>Test class: com.proofpoint.discovery.TestInMemoryStaticStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestInMemoryStaticStore@8888e6c</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestInMemoryStaticStore.setup()'><b>setup</b><br>Test class: com.proofpoint.discovery.TestInMemoryStaticStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestInMemoryStaticStore@8888e6c</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestInMemoryStaticStore.setup()'><b>setup</b><br>Test class: com.proofpoint.discovery.TestInMemoryStaticStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestInMemoryStaticStore@8888e6c</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestInMemoryStaticStore.setup()'><b>setup</b><br>Test class: com.proofpoint.discovery.TestInMemoryStaticStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestInMemoryStaticStore@8888e6c</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestInMemoryStaticStore.setup()'><b>setup</b><br>Test class: com.proofpoint.discovery.TestInMemoryStaticStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestInMemoryStaticStore@8888e6c</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraDynamicStore.teardown()'><b>teardown</b><br>Test class: com.proofpoint.discovery.TestCassandraDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraDynamicStore@681e2ca7</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraDynamicStore.teardown()'><b>teardown</b><br>Test class: com.proofpoint.discovery.TestCassandraDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraDynamicStore@681e2ca7</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraDynamicStore.teardown()'><b>teardown</b><br>Test class: com.proofpoint.discovery.TestCassandraDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraDynamicStore@681e2ca7</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraDynamicStore.teardown()'><b>teardown</b><br>Test class: com.proofpoint.discovery.TestCassandraDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraDynamicStore@681e2ca7</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraDynamicStore.teardown()'><b>teardown</b><br>Test class: com.proofpoint.discovery.TestCassandraDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraDynamicStore@681e2ca7</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraDynamicStore.teardown()'><b>teardown</b><br>Test class: com.proofpoint.discovery.TestCassandraDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraDynamicStore@681e2ca7</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraDynamicStore.teardown()'><b>teardown</b><br>Test class: com.proofpoint.discovery.TestCassandraDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraDynamicStore@681e2ca7</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraDynamicStore.teardown()'><b>teardown</b><br>Test class: com.proofpoint.discovery.TestCassandraDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraDynamicStore@681e2ca7</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraDynamicStore.teardown()'><b>teardown</b><br>Test class: com.proofpoint.discovery.TestCassandraDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraDynamicStore@681e2ca7</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraDynamicStore.teardown()'><b>teardown</b><br>Test class: com.proofpoint.discovery.TestCassandraDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraDynamicStore@681e2ca7</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraDynamicStore.teardown()'><b>teardown</b><br>Test class: com.proofpoint.discovery.TestCassandraDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraDynamicStore@681e2ca7</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraDynamicStore.teardown()'><b>teardown</b><br>Test class: com.proofpoint.discovery.TestCassandraDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraDynamicStore@681e2ca7</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestDiscoveryServer.teardown()'><b>teardown</b><br>Test class: com.proofpoint.discovery.TestDiscoveryServer</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestDiscoveryServer@10ad8659</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestDiscoveryServer.teardown()'><b>teardown</b><br>Test class: com.proofpoint.discovery.TestDiscoveryServer</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestDiscoveryServer@10ad8659</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.proofpoint.discovery.TestStaticAndDynamicStores.testBothInitializeProperly()'><b>testBothInitializeProperly</b><br>Test class: com.proofpoint.discovery.TestStaticAndDynamicStores</td>
+<td><div><pre>java.lang.NoSuchMethodError: org.apache.cassandra.thrift.KsDef.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;ILjava/util/List;)V
+	at me.prettyprint.cassandra.service.ThriftKsDef.toThrift(ThriftKsDef.java:94)
+	at me.prettyprint.cassandra.service.ThriftCluster$5.execute(ThriftCluster.java:101)
+	at me.prettyprint.cassandra.service.ThriftCluster$5.execute(ThriftCluster.java:97)
+	at me.prettyprint.cassandra.service.Operation.executeAndSetResult(Operation.java:101)
+	at me.prettyprint.cassandra.connection.HConnectionManager.operateWithFailover(HConnectionManager.java:221)
+	at me.prettyprint.cassandra.service.ThriftCluster.addKeyspace(ThriftCluster.java:107)
+	at com.proofpoint.discovery.CassandraStaticStore.&lt;init&gt;(CassandraStaticStore.java:68)
+	at com.proofpoint.discovery.TestStaticAndDynamicStores.testBothInitializeProperly(TestStaticAndDynamicStores.java:29)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:70)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:149)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:95)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:114)
+	at org.apache.maven.surefire.booter.ProviderFactory$ClassLoaderProxy.invoke(ProviderFactory.java:103)
+	at $Proxy0.invoke(Unknown Source)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
+... Removed 26 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1206352295", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1206352295'><pre>java.lang.NoSuchMethodError: org.apache.cassandra.thrift.KsDef.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;ILjava/util/List;)V
+	at me.prettyprint.cassandra.service.ThriftKsDef.toThrift(ThriftKsDef.java:94)
+	at me.prettyprint.cassandra.service.ThriftCluster$5.execute(ThriftCluster.java:101)
+	at me.prettyprint.cassandra.service.ThriftCluster$5.execute(ThriftCluster.java:97)
+	at me.prettyprint.cassandra.service.Operation.executeAndSetResult(Operation.java:101)
+	at me.prettyprint.cassandra.connection.HConnectionManager.operateWithFailover(HConnectionManager.java:221)
+	at me.prettyprint.cassandra.service.ThriftCluster.addKeyspace(ThriftCluster.java:107)
+	at com.proofpoint.discovery.CassandraStaticStore.&lt;init&gt;(CassandraStaticStore.java:68)
+	at com.proofpoint.discovery.TestStaticAndDynamicStores.testBothInitializeProperly(TestStaticAndDynamicStores.java:29)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:76)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:673)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:846)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1170)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.runWorkers(TestRunner.java:1147)
+	at org.testng.TestRunner.privateRun(TestRunner.java:749)
+	at org.testng.TestRunner.run(TestRunner.java:600)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:317)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:274)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:223)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1039)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:964)
+	at org.testng.TestNG.run(TestNG.java:900)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:70)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:149)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:95)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:114)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.apache.maven.surefire.booter.ProviderFactory$ClassLoaderProxy.invoke(ProviderFactory.java:103)
+	at $Proxy0.invoke(Unknown Source)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
+</pre></div></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestStaticAndDynamicStores@30e3c624</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraDynamicStoreInitialization.testUpdatesGCGraceSeconds()'><b>testUpdatesGCGraceSeconds</b><br>Test class: com.proofpoint.discovery.TestCassandraDynamicStoreInitialization</td>
+<td><div><pre>java.lang.NoSuchMethodError: org.apache.cassandra.thrift.KsDef.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;ILjava/util/List;)V
+	at me.prettyprint.cassandra.service.ThriftKsDef.toThrift(ThriftKsDef.java:94)
+	at me.prettyprint.cassandra.service.ThriftCluster$5.execute(ThriftCluster.java:101)
+	at me.prettyprint.cassandra.service.ThriftCluster$5.execute(ThriftCluster.java:97)
+	at me.prettyprint.cassandra.service.Operation.executeAndSetResult(Operation.java:101)
+	at me.prettyprint.cassandra.connection.HConnectionManager.operateWithFailover(HConnectionManager.java:221)
+	at me.prettyprint.cassandra.service.ThriftCluster.addKeyspace(ThriftCluster.java:107)
+	at com.proofpoint.discovery.TestCassandraDynamicStoreInitialization.testUpdatesGCGraceSeconds(TestCassandraDynamicStoreInitialization.java:50)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:70)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:149)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:95)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:114)
+	at org.apache.maven.surefire.booter.ProviderFactory$ClassLoaderProxy.invoke(ProviderFactory.java:103)
+	at $Proxy0.invoke(Unknown Source)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
+... Removed 26 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1006886859", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1006886859'><pre>java.lang.NoSuchMethodError: org.apache.cassandra.thrift.KsDef.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;ILjava/util/List;)V
+	at me.prettyprint.cassandra.service.ThriftKsDef.toThrift(ThriftKsDef.java:94)
+	at me.prettyprint.cassandra.service.ThriftCluster$5.execute(ThriftCluster.java:101)
+	at me.prettyprint.cassandra.service.ThriftCluster$5.execute(ThriftCluster.java:97)
+	at me.prettyprint.cassandra.service.Operation.executeAndSetResult(Operation.java:101)
+	at me.prettyprint.cassandra.connection.HConnectionManager.operateWithFailover(HConnectionManager.java:221)
+	at me.prettyprint.cassandra.service.ThriftCluster.addKeyspace(ThriftCluster.java:107)
+	at com.proofpoint.discovery.TestCassandraDynamicStoreInitialization.testUpdatesGCGraceSeconds(TestCassandraDynamicStoreInitialization.java:50)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:76)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:673)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:846)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1170)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.runWorkers(TestRunner.java:1147)
+	at org.testng.TestRunner.privateRun(TestRunner.java:749)
+	at org.testng.TestRunner.run(TestRunner.java:600)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:317)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:274)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:223)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1039)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:964)
+	at org.testng.TestNG.run(TestNG.java:900)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:70)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:149)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:95)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:114)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.apache.maven.surefire.booter.ProviderFactory$ClassLoaderProxy.invoke(ProviderFactory.java:103)
+	at $Proxy0.invoke(Unknown Source)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
+</pre></div></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraDynamicStoreInitialization@1505bd58</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.proofpoint.discovery.TestDynamicAnnouncement.testAllowsNullLocation()'><b>testAllowsNullLocation</b><br>Test class: com.proofpoint.discovery.TestDynamicAnnouncement</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestDynamicAnnouncement@704f459c</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestDynamicServiceAnnouncement.testCreatesDefensiveCopyOfProperties()'><b>testCreatesDefensiveCopyOfProperties</b><br>Test class: com.proofpoint.discovery.TestDynamicServiceAnnouncement</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestDynamicServiceAnnouncement@2f93c0cf</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestService.testCreatesDefensiveCopyOfProperties()'><b>testCreatesDefensiveCopyOfProperties</b><br>Test class: com.proofpoint.discovery.TestService</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestService@31b5998f</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestStaticAnnouncement.testCreatesDefensiveCopyOfProperties()'><b>testCreatesDefensiveCopyOfProperties</b><br>Test class: com.proofpoint.discovery.TestStaticAnnouncement</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestStaticAnnouncement@39e57e8f</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestServices.testCreatesDefensiveCopyOfServices()'><b>testCreatesDefensiveCopyOfServices</b><br>Test class: com.proofpoint.discovery.TestServices</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestServices@44d3db51</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraStoreConfig.testDefaults()'><b>testDefaults</b><br>Test class: com.proofpoint.discovery.TestCassandraStoreConfig</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraStoreConfig@61a116c9</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestDiscoveryConfig.testDefaults()'><b>testDefaults</b><br>Test class: com.proofpoint.discovery.TestDiscoveryConfig</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestDiscoveryConfig@16df1832</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestStaticAnnouncementResource.testDelete()'><b>testDelete</b><br>Test class: com.proofpoint.discovery.TestStaticAnnouncementResource</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestStaticAnnouncementResource@9d7fbfb</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestDynamicAnnouncementResource.testDeleteExisting()'><b>testDeleteExisting</b><br>Test class: com.proofpoint.discovery.TestDynamicAnnouncementResource</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestDynamicAnnouncementResource@64633e5e</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestDynamicAnnouncementResource.testDeleteMissing()'><b>testDeleteMissing</b><br>Test class: com.proofpoint.discovery.TestDynamicAnnouncementResource</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestDynamicAnnouncementResource@64633e5e</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraPaginator.testEmpty()'><b>testEmpty</b><br>Test class: com.proofpoint.discovery.TestCassandraPaginator</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraPaginator@2bd1e730</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestDynamicAnnouncementResource.testEnvironmentConflict()'><b>testEnvironmentConflict</b><br>Test class: com.proofpoint.discovery.TestDynamicAnnouncementResource</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestDynamicAnnouncementResource@64633e5e</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestStaticAnnouncementResource.testEnvironmentConflict()'><b>testEnvironmentConflict</b><br>Test class: com.proofpoint.discovery.TestStaticAnnouncementResource</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestStaticAnnouncementResource@9d7fbfb</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestDynamicServiceAnnouncement.testEquivalence()'><b>testEquivalence</b><br>Test class: com.proofpoint.discovery.TestDynamicServiceAnnouncement</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestDynamicServiceAnnouncement@2f93c0cf</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestService.testEquivalence()'><b>testEquivalence</b><br>Test class: com.proofpoint.discovery.TestService</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestService@31b5998f</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestStaticAnnouncement.testEquivalence()'><b>testEquivalence</b><br>Test class: com.proofpoint.discovery.TestStaticAnnouncement</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestStaticAnnouncement@39e57e8f</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraStoreConfig.testExplicitPropertyMappings()'><b>testExplicitPropertyMappings</b><br>Test class: com.proofpoint.discovery.TestCassandraStoreConfig</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraStoreConfig@61a116c9</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestDiscoveryConfig.testExplicitPropertyMappings()'><b>testExplicitPropertyMappings</b><br>Test class: com.proofpoint.discovery.TestDiscoveryConfig</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestDiscoveryConfig@16df1832</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestId.testFromJson()'><b>testFromJson</b><br>Test class: com.proofpoint.discovery.TestId</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestId@671381e7</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestStaticAnnouncementResource.testGet()'><b>testGet</b><br>Test class: com.proofpoint.discovery.TestStaticAnnouncementResource</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestStaticAnnouncementResource@9d7fbfb</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestServiceResource.testGetAll()'><b>testGetAll</b><br>Test class: com.proofpoint.discovery.TestServiceResource</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestServiceResource@97494c8</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestServiceResource.testGetByType()'><b>testGetByType</b><br>Test class: com.proofpoint.discovery.TestServiceResource</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestServiceResource@97494c8</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestServiceResource.testGetByTypeAndPool()'><b>testGetByTypeAndPool</b><br>Test class: com.proofpoint.discovery.TestServiceResource</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestServiceResource@97494c8</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestDynamicServiceAnnouncement.testImmutableProperties()'><b>testImmutableProperties</b><br>Test class: com.proofpoint.discovery.TestDynamicServiceAnnouncement</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestDynamicServiceAnnouncement@2f93c0cf</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestService.testImmutableProperties()'><b>testImmutableProperties</b><br>Test class: com.proofpoint.discovery.TestService</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestService@31b5998f</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestStaticAnnouncement.testImmutableProperties()'><b>testImmutableProperties</b><br>Test class: com.proofpoint.discovery.TestStaticAnnouncement</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestStaticAnnouncement@39e57e8f</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestDynamicAnnouncementResource.testMakesUpLocation()'><b>testMakesUpLocation</b><br>Test class: com.proofpoint.discovery.TestDynamicAnnouncementResource</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestDynamicAnnouncementResource@64633e5e</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestStaticAnnouncementResource.testMakesUpLocation()'><b>testMakesUpLocation</b><br>Test class: com.proofpoint.discovery.TestStaticAnnouncementResource</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestStaticAnnouncementResource@9d7fbfb</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraPaginator.testMoreThanOnePageWithFullLastPage()'><b>testMoreThanOnePageWithFullLastPage</b><br>Test class: com.proofpoint.discovery.TestCassandraPaginator</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraPaginator@2bd1e730</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraPaginator.testMoreThanOnePageWithPartialLastPage()'><b>testMoreThanOnePageWithPartialLastPage</b><br>Test class: com.proofpoint.discovery.TestCassandraPaginator</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraPaginator@2bd1e730</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraPaginator.testOne()'><b>testOne</b><br>Test class: com.proofpoint.discovery.TestCassandraPaginator</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraPaginator@2bd1e730</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraPaginator.testOneFullPage()'><b>testOneFullPage</b><br>Test class: com.proofpoint.discovery.TestCassandraPaginator</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraPaginator@2bd1e730</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestService.testParseJson()'><b>testParseJson</b><br>Test class: com.proofpoint.discovery.TestService</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestService@31b5998f</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestDynamicAnnouncement.testParsing()'><b>testParsing</b><br>Test class: com.proofpoint.discovery.TestDynamicAnnouncement</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestDynamicAnnouncement@704f459c</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestDynamicServiceAnnouncement.testParsing()'><b>testParsing</b><br>Test class: com.proofpoint.discovery.TestDynamicServiceAnnouncement</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestDynamicServiceAnnouncement@2f93c0cf</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestStaticAnnouncement.testParsing()'><b>testParsing</b><br>Test class: com.proofpoint.discovery.TestStaticAnnouncement</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestStaticAnnouncement@39e57e8f</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestStaticAnnouncementResource.testPost()'><b>testPost</b><br>Test class: com.proofpoint.discovery.TestStaticAnnouncementResource</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestStaticAnnouncementResource@9d7fbfb</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestDynamicAnnouncementResource.testPutNew()'><b>testPutNew</b><br>Test class: com.proofpoint.discovery.TestDynamicAnnouncementResource</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestDynamicAnnouncementResource@64633e5e</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestDynamicAnnouncement.testRejectsNullEnvironment()'><b>testRejectsNullEnvironment</b><br>Test class: com.proofpoint.discovery.TestDynamicAnnouncement</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestDynamicAnnouncement@704f459c</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestDynamicAnnouncement.testRejectsNullPool()'><b>testRejectsNullPool</b><br>Test class: com.proofpoint.discovery.TestDynamicAnnouncement</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestDynamicAnnouncement@704f459c</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestDynamicAnnouncement.testRejectsNullServiceAnnouncements()'><b>testRejectsNullServiceAnnouncements</b><br>Test class: com.proofpoint.discovery.TestDynamicAnnouncement</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestDynamicAnnouncement@704f459c</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestDynamicAnnouncementResource.testReplace()'><b>testReplace</b><br>Test class: com.proofpoint.discovery.TestDynamicAnnouncementResource</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestDynamicAnnouncementResource@64633e5e</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestServices.testServicesSetIsImmutable()'><b>testServicesSetIsImmutable</b><br>Test class: com.proofpoint.discovery.TestServices</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestServices@44d3db51</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraPaginator.testThrows()'><b>testThrows</b><br>Test class: com.proofpoint.discovery.TestCassandraPaginator</td>
+<td><div><pre>java.util.NoSuchElementException
+	at com.proofpoint.discovery.CassandraPaginator$QueryIterator.next(CassandraPaginator.java:60)
+	at com.proofpoint.discovery.CassandraPaginator$QueryIterator.next(CassandraPaginator.java:27)
+	at com.proofpoint.discovery.TestCassandraPaginator.testThrows(TestCassandraPaginator.java:57)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:70)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:149)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:95)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:114)
+	at org.apache.maven.surefire.booter.ProviderFactory$ClassLoaderProxy.invoke(ProviderFactory.java:103)
+	at $Proxy0.invoke(Unknown Source)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
+... Removed 26 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1147055517", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1147055517'><pre>java.util.NoSuchElementException
+	at com.proofpoint.discovery.CassandraPaginator$QueryIterator.next(CassandraPaginator.java:60)
+	at com.proofpoint.discovery.CassandraPaginator$QueryIterator.next(CassandraPaginator.java:27)
+	at com.proofpoint.discovery.TestCassandraPaginator.testThrows(TestCassandraPaginator.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:76)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:673)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:846)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1170)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.runWorkers(TestRunner.java:1147)
+	at org.testng.TestRunner.privateRun(TestRunner.java:749)
+	at org.testng.TestRunner.run(TestRunner.java:600)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:317)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:274)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:223)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1039)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:964)
+	at org.testng.TestNG.run(TestNG.java:900)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:70)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:149)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:95)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:114)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.apache.maven.surefire.booter.ProviderFactory$ClassLoaderProxy.invoke(ProviderFactory.java:103)
+	at $Proxy0.invoke(Unknown Source)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
+</pre></div></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraPaginator@2bd1e730</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestId.testToJson()'><b>testToJson</b><br>Test class: com.proofpoint.discovery.TestId</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestId@671381e7</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestService.testToJson()'><b>testToJson</b><br>Test class: com.proofpoint.discovery.TestService</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestService@31b5998f</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestServices.testToJson()'><b>testToJson</b><br>Test class: com.proofpoint.discovery.TestServices</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestServices@44d3db51</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestDynamicAnnouncement.testToString()'><b>testToString</b><br>Test class: com.proofpoint.discovery.TestDynamicAnnouncement</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestDynamicAnnouncement@704f459c</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestDynamicServiceAnnouncement.testToString()'><b>testToString</b><br>Test class: com.proofpoint.discovery.TestDynamicServiceAnnouncement</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestDynamicServiceAnnouncement@2f93c0cf</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestServices.testValidatesEnvironmentNotNull()'><b>testValidatesEnvironmentNotNull</b><br>Test class: com.proofpoint.discovery.TestServices</td>
+<td><div><pre>java.lang.NullPointerException: environment is null
+	at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:204)
+	at com.proofpoint.discovery.Services.&lt;init&gt;(Services.java:18)
+	at com.proofpoint.discovery.TestServices.testValidatesEnvironmentNotNull(TestServices.java:71)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:70)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:149)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:95)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:114)
+	at org.apache.maven.surefire.booter.ProviderFactory$ClassLoaderProxy.invoke(ProviderFactory.java:103)
+	at $Proxy0.invoke(Unknown Source)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
+... Removed 26 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace388416933", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace388416933'><pre>java.lang.NullPointerException: environment is null
+	at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:204)
+	at com.proofpoint.discovery.Services.&lt;init&gt;(Services.java:18)
+	at com.proofpoint.discovery.TestServices.testValidatesEnvironmentNotNull(TestServices.java:71)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:76)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:673)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:846)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1170)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.runWorkers(TestRunner.java:1147)
+	at org.testng.TestRunner.privateRun(TestRunner.java:749)
+	at org.testng.TestRunner.run(TestRunner.java:600)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:317)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:274)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:223)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1039)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:964)
+	at org.testng.TestNG.run(TestNG.java:900)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:70)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:149)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:95)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:114)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.apache.maven.surefire.booter.ProviderFactory$ClassLoaderProxy.invoke(ProviderFactory.java:103)
+	at $Proxy0.invoke(Unknown Source)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
+</pre></div></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestServices@44d3db51</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestService.testValidatesIdNotNull()'><b>testValidatesIdNotNull</b><br>Test class: com.proofpoint.discovery.TestService</td>
+<td><div><pre>java.lang.NullPointerException: id is null
+	at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:204)
+	at com.proofpoint.discovery.Service.&lt;init&gt;(Service.java:31)
+	at com.proofpoint.discovery.TestService.testValidatesIdNotNull(TestService.java:93)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:70)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:149)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:95)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:114)
+	at org.apache.maven.surefire.booter.ProviderFactory$ClassLoaderProxy.invoke(ProviderFactory.java:103)
+	at $Proxy0.invoke(Unknown Source)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
+... Removed 26 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1888172979", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1888172979'><pre>java.lang.NullPointerException: id is null
+	at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:204)
+	at com.proofpoint.discovery.Service.&lt;init&gt;(Service.java:31)
+	at com.proofpoint.discovery.TestService.testValidatesIdNotNull(TestService.java:93)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:76)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:673)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:846)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1170)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.runWorkers(TestRunner.java:1147)
+	at org.testng.TestRunner.privateRun(TestRunner.java:749)
+	at org.testng.TestRunner.run(TestRunner.java:600)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:317)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:274)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:223)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1039)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:964)
+	at org.testng.TestNG.run(TestNG.java:900)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:70)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:149)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:95)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:114)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.apache.maven.surefire.booter.ProviderFactory$ClassLoaderProxy.invoke(ProviderFactory.java:103)
+	at $Proxy0.invoke(Unknown Source)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
+</pre></div></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestService@31b5998f</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestService.testValidatesLocationNotNull()'><b>testValidatesLocationNotNull</b><br>Test class: com.proofpoint.discovery.TestService</td>
+<td><div><pre>java.lang.NullPointerException: location is null
+	at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:204)
+	at com.proofpoint.discovery.Service.&lt;init&gt;(Service.java:34)
+	at com.proofpoint.discovery.TestService.testValidatesLocationNotNull(TestService.java:111)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:70)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:149)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:95)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:114)
+	at org.apache.maven.surefire.booter.ProviderFactory$ClassLoaderProxy.invoke(ProviderFactory.java:103)
+	at $Proxy0.invoke(Unknown Source)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
+... Removed 26 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1157406334", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1157406334'><pre>java.lang.NullPointerException: location is null
+	at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:204)
+	at com.proofpoint.discovery.Service.&lt;init&gt;(Service.java:34)
+	at com.proofpoint.discovery.TestService.testValidatesLocationNotNull(TestService.java:111)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:76)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:673)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:846)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1170)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.runWorkers(TestRunner.java:1147)
+	at org.testng.TestRunner.privateRun(TestRunner.java:749)
+	at org.testng.TestRunner.run(TestRunner.java:600)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:317)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:274)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:223)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1039)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:964)
+	at org.testng.TestNG.run(TestNG.java:900)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:70)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:149)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:95)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:114)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.apache.maven.surefire.booter.ProviderFactory$ClassLoaderProxy.invoke(ProviderFactory.java:103)
+	at $Proxy0.invoke(Unknown Source)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
+</pre></div></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestService@31b5998f</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestDynamicAnnouncement.testValidatesNestedServiceAnnouncements()'><b>testValidatesNestedServiceAnnouncements</b><br>Test class: com.proofpoint.discovery.TestDynamicAnnouncement</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestDynamicAnnouncement@704f459c</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestDiscoveryConfig.testValidatesNotNullDuration()'><b>testValidatesNotNullDuration</b><br>Test class: com.proofpoint.discovery.TestDiscoveryConfig</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestDiscoveryConfig@16df1832</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraStoreConfig.testValidatesNotNullKeyspace()'><b>testValidatesNotNullKeyspace</b><br>Test class: com.proofpoint.discovery.TestCassandraStoreConfig</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraStoreConfig@61a116c9</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestStaticAnnouncement.testValidatesNullEnvironment()'><b>testValidatesNullEnvironment</b><br>Test class: com.proofpoint.discovery.TestStaticAnnouncement</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestStaticAnnouncement@39e57e8f</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestDynamicServiceAnnouncement.testValidatesNullId()'><b>testValidatesNullId</b><br>Test class: com.proofpoint.discovery.TestDynamicServiceAnnouncement</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestDynamicServiceAnnouncement@2f93c0cf</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestStaticAnnouncement.testValidatesNullPool()'><b>testValidatesNullPool</b><br>Test class: com.proofpoint.discovery.TestStaticAnnouncement</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestStaticAnnouncement@39e57e8f</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestDynamicServiceAnnouncement.testValidatesNullProperties()'><b>testValidatesNullProperties</b><br>Test class: com.proofpoint.discovery.TestDynamicServiceAnnouncement</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestDynamicServiceAnnouncement@2f93c0cf</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestStaticAnnouncement.testValidatesNullProperties()'><b>testValidatesNullProperties</b><br>Test class: com.proofpoint.discovery.TestStaticAnnouncement</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestStaticAnnouncement@39e57e8f</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestDynamicServiceAnnouncement.testValidatesNullType()'><b>testValidatesNullType</b><br>Test class: com.proofpoint.discovery.TestDynamicServiceAnnouncement</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestDynamicServiceAnnouncement@2f93c0cf</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestStaticAnnouncement.testValidatesNullType()'><b>testValidatesNullType</b><br>Test class: com.proofpoint.discovery.TestStaticAnnouncement</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestStaticAnnouncement@39e57e8f</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestService.testValidatesPoolNotNull()'><b>testValidatesPoolNotNull</b><br>Test class: com.proofpoint.discovery.TestService</td>
+<td><div><pre>java.lang.NullPointerException: pool is null
+	at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:204)
+	at com.proofpoint.discovery.Service.&lt;init&gt;(Service.java:33)
+	at com.proofpoint.discovery.TestService.testValidatesPoolNotNull(TestService.java:105)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:70)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:149)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:95)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:114)
+	at org.apache.maven.surefire.booter.ProviderFactory$ClassLoaderProxy.invoke(ProviderFactory.java:103)
+	at $Proxy0.invoke(Unknown Source)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
+... Removed 26 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace621381012", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace621381012'><pre>java.lang.NullPointerException: pool is null
+	at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:204)
+	at com.proofpoint.discovery.Service.&lt;init&gt;(Service.java:33)
+	at com.proofpoint.discovery.TestService.testValidatesPoolNotNull(TestService.java:105)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:76)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:673)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:846)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1170)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.runWorkers(TestRunner.java:1147)
+	at org.testng.TestRunner.privateRun(TestRunner.java:749)
+	at org.testng.TestRunner.run(TestRunner.java:600)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:317)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:274)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:223)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1039)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:964)
+	at org.testng.TestNG.run(TestNG.java:900)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:70)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:149)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:95)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:114)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.apache.maven.surefire.booter.ProviderFactory$ClassLoaderProxy.invoke(ProviderFactory.java:103)
+	at $Proxy0.invoke(Unknown Source)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
+</pre></div></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestService@31b5998f</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestService.testValidatesPropertiesNotNull()'><b>testValidatesPropertiesNotNull</b><br>Test class: com.proofpoint.discovery.TestService</td>
+<td><div><pre>java.lang.NullPointerException: properties is null
+	at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:204)
+	at com.proofpoint.discovery.Service.&lt;init&gt;(Service.java:35)
+	at com.proofpoint.discovery.TestService.testValidatesPropertiesNotNull(TestService.java:117)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:70)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:149)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:95)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:114)
+	at org.apache.maven.surefire.booter.ProviderFactory$ClassLoaderProxy.invoke(ProviderFactory.java:103)
+	at $Proxy0.invoke(Unknown Source)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
+... Removed 26 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace337693323", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace337693323'><pre>java.lang.NullPointerException: properties is null
+	at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:204)
+	at com.proofpoint.discovery.Service.&lt;init&gt;(Service.java:35)
+	at com.proofpoint.discovery.TestService.testValidatesPropertiesNotNull(TestService.java:117)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:76)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:673)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:846)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1170)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.runWorkers(TestRunner.java:1147)
+	at org.testng.TestRunner.privateRun(TestRunner.java:749)
+	at org.testng.TestRunner.run(TestRunner.java:600)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:317)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:274)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:223)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1039)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:964)
+	at org.testng.TestNG.run(TestNG.java:900)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:70)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:149)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:95)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:114)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.apache.maven.surefire.booter.ProviderFactory$ClassLoaderProxy.invoke(ProviderFactory.java:103)
+	at $Proxy0.invoke(Unknown Source)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
+</pre></div></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestService@31b5998f</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestServices.testValidatesServicesNotNull()'><b>testValidatesServicesNotNull</b><br>Test class: com.proofpoint.discovery.TestServices</td>
+<td><div><pre>java.lang.NullPointerException: services is null
+	at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:204)
+	at com.proofpoint.discovery.Services.&lt;init&gt;(Services.java:19)
+	at com.proofpoint.discovery.TestServices.testValidatesServicesNotNull(TestServices.java:77)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:70)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:149)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:95)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:114)
+	at org.apache.maven.surefire.booter.ProviderFactory$ClassLoaderProxy.invoke(ProviderFactory.java:103)
+	at $Proxy0.invoke(Unknown Source)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
+... Removed 26 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1920589698", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1920589698'><pre>java.lang.NullPointerException: services is null
+	at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:204)
+	at com.proofpoint.discovery.Services.&lt;init&gt;(Services.java:19)
+	at com.proofpoint.discovery.TestServices.testValidatesServicesNotNull(TestServices.java:77)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:76)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:673)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:846)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1170)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.runWorkers(TestRunner.java:1147)
+	at org.testng.TestRunner.privateRun(TestRunner.java:749)
+	at org.testng.TestRunner.run(TestRunner.java:600)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:317)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:274)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:223)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1039)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:964)
+	at org.testng.TestNG.run(TestNG.java:900)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:70)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:149)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:95)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:114)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.apache.maven.surefire.booter.ProviderFactory$ClassLoaderProxy.invoke(ProviderFactory.java:103)
+	at $Proxy0.invoke(Unknown Source)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
+</pre></div></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestServices@44d3db51</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestService.testValidatesTypeNotNull()'><b>testValidatesTypeNotNull</b><br>Test class: com.proofpoint.discovery.TestService</td>
+<td><div><pre>java.lang.NullPointerException: type is null
+	at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:204)
+	at com.proofpoint.discovery.Service.&lt;init&gt;(Service.java:32)
+	at com.proofpoint.discovery.TestService.testValidatesTypeNotNull(TestService.java:99)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:70)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:149)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:95)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:114)
+	at org.apache.maven.surefire.booter.ProviderFactory$ClassLoaderProxy.invoke(ProviderFactory.java:103)
+	at $Proxy0.invoke(Unknown Source)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
+... Removed 26 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1959884287", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1959884287'><pre>java.lang.NullPointerException: type is null
+	at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:204)
+	at com.proofpoint.discovery.Service.&lt;init&gt;(Service.java:32)
+	at com.proofpoint.discovery.TestService.testValidatesTypeNotNull(TestService.java:99)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:76)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:673)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:846)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1170)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.runWorkers(TestRunner.java:1147)
+	at org.testng.TestRunner.privateRun(TestRunner.java:749)
+	at org.testng.TestRunner.run(TestRunner.java:600)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:317)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:274)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:223)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1039)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:964)
+	at org.testng.TestNG.run(TestNG.java:900)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:70)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:149)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:95)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:114)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.apache.maven.surefire.booter.ProviderFactory$ClassLoaderProxy.invoke(ProviderFactory.java:103)
+	at $Proxy0.invoke(Unknown Source)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
+</pre></div></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestService@31b5998f</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraStaticStore.testCanHandleLotsOfServices()'><b>testCanHandleLotsOfServices</b><br>Test class: com.proofpoint.discovery.TestCassandraStaticStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraStaticStore@42e020c9</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestInMemoryStaticStore.testCanHandleLotsOfServices()'><b>testCanHandleLotsOfServices</b><br>Test class: com.proofpoint.discovery.TestInMemoryStaticStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestInMemoryStaticStore@8888e6c</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraDynamicStore.testCannotBeInitalizedTwice()'><b>testCannotBeInitalizedTwice</b><br>Test class: com.proofpoint.discovery.TestCassandraDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraDynamicStore@681e2ca7</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraDynamicStore.testDelete()'><b>testDelete</b><br>Test class: com.proofpoint.discovery.TestCassandraDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraDynamicStore@681e2ca7</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestInMemoryDynamicStore.testDelete()'><b>testDelete</b><br>Test class: com.proofpoint.discovery.TestInMemoryDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestInMemoryDynamicStore@d576e70</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraStaticStore.testDelete()'><b>testDelete</b><br>Test class: com.proofpoint.discovery.TestCassandraStaticStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraStaticStore@42e020c9</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestInMemoryStaticStore.testDelete()'><b>testDelete</b><br>Test class: com.proofpoint.discovery.TestInMemoryStaticStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestInMemoryStaticStore@8888e6c</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraDynamicStore.testDeleteThenReInsert()'><b>testDeleteThenReInsert</b><br>Test class: com.proofpoint.discovery.TestCassandraDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraDynamicStore@681e2ca7</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestInMemoryDynamicStore.testDeleteThenReInsert()'><b>testDeleteThenReInsert</b><br>Test class: com.proofpoint.discovery.TestInMemoryDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestInMemoryDynamicStore@d576e70</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestDiscoveryServer.testDynamicAnnouncement()'><b>testDynamicAnnouncement</b><br>Test class: com.proofpoint.discovery.TestDiscoveryServer</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestDiscoveryServer@10ad8659</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraDynamicStore.testEmpty()'><b>testEmpty</b><br>Test class: com.proofpoint.discovery.TestCassandraDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraDynamicStore@681e2ca7</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestInMemoryDynamicStore.testEmpty()'><b>testEmpty</b><br>Test class: com.proofpoint.discovery.TestInMemoryDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestInMemoryDynamicStore@d576e70</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraStaticStore.testEmpty()'><b>testEmpty</b><br>Test class: com.proofpoint.discovery.TestCassandraStaticStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraStaticStore@42e020c9</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestInMemoryStaticStore.testEmpty()'><b>testEmpty</b><br>Test class: com.proofpoint.discovery.TestInMemoryStaticStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestInMemoryStaticStore@8888e6c</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraDynamicStore.testExpires()'><b>testExpires</b><br>Test class: com.proofpoint.discovery.TestCassandraDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraDynamicStore@681e2ca7</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestInMemoryDynamicStore.testExpires()'><b>testExpires</b><br>Test class: com.proofpoint.discovery.TestInMemoryDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestInMemoryDynamicStore@d576e70</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraDynamicStore.testGetByType()'><b>testGetByType</b><br>Test class: com.proofpoint.discovery.TestCassandraDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraDynamicStore@681e2ca7</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestInMemoryDynamicStore.testGetByType()'><b>testGetByType</b><br>Test class: com.proofpoint.discovery.TestInMemoryDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestInMemoryDynamicStore@d576e70</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraStaticStore.testGetByType()'><b>testGetByType</b><br>Test class: com.proofpoint.discovery.TestCassandraStaticStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraStaticStore@42e020c9</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestInMemoryStaticStore.testGetByType()'><b>testGetByType</b><br>Test class: com.proofpoint.discovery.TestInMemoryStaticStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestInMemoryStaticStore@8888e6c</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraDynamicStore.testGetByTypeAndPool()'><b>testGetByTypeAndPool</b><br>Test class: com.proofpoint.discovery.TestCassandraDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraDynamicStore@681e2ca7</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestInMemoryDynamicStore.testGetByTypeAndPool()'><b>testGetByTypeAndPool</b><br>Test class: com.proofpoint.discovery.TestInMemoryDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestInMemoryDynamicStore@d576e70</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraStaticStore.testGetByTypeAndPool()'><b>testGetByTypeAndPool</b><br>Test class: com.proofpoint.discovery.TestCassandraStaticStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraStaticStore@42e020c9</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestInMemoryStaticStore.testGetByTypeAndPool()'><b>testGetByTypeAndPool</b><br>Test class: com.proofpoint.discovery.TestInMemoryStaticStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestInMemoryStaticStore@8888e6c</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraStaticStore.testPutMultiple()'><b>testPutMultiple</b><br>Test class: com.proofpoint.discovery.TestCassandraStaticStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraStaticStore@42e020c9</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestInMemoryStaticStore.testPutMultiple()'><b>testPutMultiple</b><br>Test class: com.proofpoint.discovery.TestInMemoryStaticStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestInMemoryStaticStore@8888e6c</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraDynamicStore.testPutMultipleForDifferentNodes()'><b>testPutMultipleForDifferentNodes</b><br>Test class: com.proofpoint.discovery.TestCassandraDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraDynamicStore@681e2ca7</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestInMemoryDynamicStore.testPutMultipleForDifferentNodes()'><b>testPutMultipleForDifferentNodes</b><br>Test class: com.proofpoint.discovery.TestInMemoryDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestInMemoryDynamicStore@d576e70</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraDynamicStore.testPutMultipleForSameNode()'><b>testPutMultipleForSameNode</b><br>Test class: com.proofpoint.discovery.TestCassandraDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraDynamicStore@681e2ca7</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestInMemoryDynamicStore.testPutMultipleForSameNode()'><b>testPutMultipleForSameNode</b><br>Test class: com.proofpoint.discovery.TestInMemoryDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestInMemoryDynamicStore@d576e70</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraDynamicStore.testPutSingle()'><b>testPutSingle</b><br>Test class: com.proofpoint.discovery.TestCassandraDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraDynamicStore@681e2ca7</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestInMemoryDynamicStore.testPutSingle()'><b>testPutSingle</b><br>Test class: com.proofpoint.discovery.TestInMemoryDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestInMemoryDynamicStore@d576e70</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraStaticStore.testPutSingle()'><b>testPutSingle</b><br>Test class: com.proofpoint.discovery.TestCassandraStaticStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraStaticStore@42e020c9</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestInMemoryStaticStore.testPutSingle()'><b>testPutSingle</b><br>Test class: com.proofpoint.discovery.TestInMemoryStaticStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestInMemoryStaticStore@8888e6c</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraDynamicStore.testReplace()'><b>testReplace</b><br>Test class: com.proofpoint.discovery.TestCassandraDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraDynamicStore@681e2ca7</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestInMemoryDynamicStore.testReplace()'><b>testReplace</b><br>Test class: com.proofpoint.discovery.TestInMemoryDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestInMemoryDynamicStore@d576e70</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestCassandraDynamicStore.testReplaceExpired()'><b>testReplaceExpired</b><br>Test class: com.proofpoint.discovery.TestCassandraDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestCassandraDynamicStore@681e2ca7</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestInMemoryDynamicStore.testReplaceExpired()'><b>testReplaceExpired</b><br>Test class: com.proofpoint.discovery.TestInMemoryDynamicStore</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestInMemoryDynamicStore@d576e70</td></tr>
+<tr>
+<td title='com.proofpoint.discovery.TestDiscoveryServer.testStaticAnnouncement()'><b>testStaticAnnouncement</b><br>Test class: com.proofpoint.discovery.TestDiscoveryServer</td>
+<td></td>
+<td>0</td>
+<td>com.proofpoint.discovery.TestDiscoveryServer@10ad8659</td></tr>
+</table><p>
+</body>
+</html>
